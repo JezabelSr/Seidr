@@ -1,0 +1,9 @@
+org_id,nombre,tipo,ccaa,ambito,tipo_asistencia,web,gratuito,notas
+1,Fundación ONCE del Perro Guía,Fundación,Nacional,Nacional,perro_guia,https://perrosguia.once.es,true,Referente nacional perro guía para discapacidad visual
+2,DogPoint,ONG,Nacional,Nacional,perro_autismo,https://dogpoint.es,true,Única ONG especializada en perros asistencia para niños con TEA. Gratuita para familias
+3,Fundación Bocalán,Fundación,Nacional,Nacional,perro_autismo;perro_servicio;terapia_asistida,https://bocalan.com,false,Internacional con sede en España. TEA discapacidad intelectual y otros colectivos
+4,AEPA Euskadi,Asociación,País Vasco,Regional,perro_asistencia,http://www.aepa-euskadi.org,false,Asociación de perros de asistencia en el País Vasco. Fundada 2006
+5,Terapican,Asociación,Canarias,Regional,perro_señal;terapia_asistida;perro_asistencia,https://terapican.org,true,Centro oficial reconocido por el Gobierno de Canarias. Perros señal para sordos y terapia asistida
+6,AAS Discan,Asociación,Nacional,Nacional,perro_guia;perro_servicio;perro_autismo;perro_señal,https://www.discan.dog,false,Información y recursos sobre los 5 tipos de perros de asistencia reconocidos en España
+7,Asociación Española de Perros de Apoyo,Asociación,Nacional,Nacional,perro_apoyo_emocional;terapia_asistida,https://perrosdeapoyo.es,false,Intervenciones asistidas terapéuticas educativas y sociales. Valoración profesional previa
+8,ACGA,Asociación,Cataluña,Regional,perro_asistencia,https://acga.cat,false,Asociación Catalana de Perros de Asistencia
