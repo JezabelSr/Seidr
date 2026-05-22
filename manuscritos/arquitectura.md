@@ -178,7 +178,7 @@ se codifica con estas 8 dimensiones en escala 0-5.
 7. Digimon · 8. One Piece · 9. La Tierra Media
 10. Universo Rick Riordan · 11. Avatar Aang/Korra
 12. Juego de Tronos · 13. Las Crónicas de Narnia
-14. Dragon Ball · 15. Dragon Age
+14. Naruto · 15. Dragon Age
 16. The Legend of Zelda · 17. Dragon Quest
 18. Avatar James Cameron
 
