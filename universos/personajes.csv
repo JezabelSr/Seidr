@@ -1,0 +1,5 @@
+personaje_id,universo_id,nombre,rol,hiperfoco,regulacion_emocional,sensorialidad,comunicacion,aprendizaje,sociabilidad,propiocepcion,funcion_ejecutiva,estilo_comunicacion,estilo_aprendizaje,estilo_socializacion,perfil_sensorial,justificacion
+
+1,1,Hermione Granger,aliado,5,3,2,5,5,3,2,5,verbal_directo,teorico,intimo,neutro,Obsesión constante por libros y reglas. Matriculación en todas las asignaturas año 3. Verbal precisa y literal. Planificación y organización excepcionales. Círculo social pequeño pero intenso.
+2,1,Luna Lovegood,aliado,5,5,4,2,4,2,3,3,verbal_indirecto,asociativo,autonomo,buscador,Hiperfoco en criaturas no reconocidas y mundo alternativo. Regulación emocional extraordinariamente estable ante el rechazo. Comunicación asociativa que no sigue convenciones sociales. Aprendizaje por conexiones inesperadas.
+3,1,Neville Longbottom,aliado,4,3,3,2,3,3,2,1,verbal_indirecto,practico,intimo,neutro,Hiperfoco en Herbología. Olvido selectivo de lo que no le motiva. Torpeza motora frecuente. Valiente cuando sus valores están en juego — lidera el Ejército de Dumbledore en año 7.
