@@ -1,0 +1,33 @@
+criatura_id,universo_id,nombre,calma,vinculo,estimulacion,independencia,raza_real_id,explicacion_equivalencia
+1,1,Fawkes,5,5,2,3,1,Golden Retriever — calma absoluta y lealtad incondicional. Aparece en momentos de crisis sin agitarse. Llanto curativo — presencia terapéutica por excelencia.
+2,1,Hedwig,4,5,2,4,2,Labrador Retriever — leal y serena. Vínculo emocional profundo con Harry — su muerte es una de las pérdidas más sentidas de la saga. Presencia discreta y reconfortante.
+3,1,Norbert/Norberta,1,3,5,4,3,Husky Siberiano — energía extrema e independencia marcada. Vínculo real pero condicionado. Refleja el hiperfoco de Hagrid en criaturas peligrosas como si fueran inofensivas.
+4,1,Buckbeak,3,4,3,4,4,Alaskan Malamute — independiente y leal cuando respetas su espacio. Requiere respeto mutuo para establecer el vínculo. No apto para cualquier persona. Metáfora perfecta del vínculo de asistencia basado en respeto y no en imposición.
+5,1,La señora Norris,4,5,2,4,5,Pharaoh Hound — silencioso vínculo intenso y selectivo elegante e independiente. El único vínculo real de Filch en toda la saga — conexión casi telepática entre ellos.
+6,1,Nagini,3,4,3,3,6,Dobermann — leal a una sola persona intimidante y precisa. Vínculo oscuro pero profundo con Voldemort — extensión literal de su alma como Horrocrux. Obediencia absoluta a su persona de referencia.
+7,1,Aragog,2,3,3,5,7,Shar Pei — vínculo exclusivo con su persona desconfiado con todos los demás. Respeta y protege a Hagrid pero no extiende ese vínculo a nadie más. Lidera su propia colonia con total autonomía.
+8,1,Crookshanks,4,4,2,4,8,Border Collie — inteligencia excepcional y criterio propio. Detecta a Scabbers/Pettigrew cuando ningún humano lo hace. Vínculo profundo con Hermione — la protege activamente con su inteligencia.
+9,1,Firenze,5,3,2,5,9,Gran Danés — presencia imponente y serena. Rechazado por su manada por ayudar a humanos — actúa según su propio criterio moral. Vínculo selectivo pero genuino con quienes respeta.
+10,1,Bowtruckle,5,4,1,3,10,Cavalier King Charles Spaniel — calma excepcional y vínculo afectuoso. Estimulación mínima. Ideal para perfiles con hipersensibilidad sensorial o necesidad de entorno tranquilo.
+11,1,Niffler,1,3,5,4,11,Jack Russell Terrier — energía extrema e hiperfoco absoluto en su objetivo. Afectuoso pero su instinto supera cualquier lealtad cuando detecta objetos brillantes. Independiente y difícil de manejar en modo búsqueda.
+12,1,Thestral,5,4,2,4,12,Galgo — aspecto intimidante pero naturaleza serena y afectuosa. Solo visible para quien ha visto la muerte — vínculo especial con Luna y Harry. Movimiento elegante y silencioso. Presencia reconfortante para quienes pueden verlos.
+13,1,Fang,2,5,3,1,13,Mastín Napolitano — tamaño imponente con corazón dependiente. Vínculo incondicional con Hagrid — siempre a su lado aunque tiemble de miedo. Movimiento lento y majestuoso. La cobardía es un rasgo individual de Fang no de la raza.
+14,1,Ronan,5,2,1,5,14,Saluki — independiente y sereno. Desconfianza hacia los humanos por principio. Observador contemplativo — mira las estrellas y habla con sabiduría pausada. Actúa según su propio código sin aceptar interferencias externas.
+15,1,Bane,3,1,2,5,15,Caucasian Shepherd — hostil con extraños independiente no acepta interferencias. Contraste directo con Firenze — mismo origen centauro pero actitud opuesta hacia los humanos.
+16,1,Fluffy,1,2,5,4,16,Rottweiler — guardián natural difícil de manejar sin experiencia. Tres cabezas activas simultáneamente. Responde a la música pero sin conexión emocional real.
+17,1,El basilisco,3,2,3,5,17,Fila Brasileiro — leal únicamente a su dueño peligroso para cualquier otro. Vive solo en las cámaras durante siglos. Letal cuando es activado por el heredero de Slytherin.
+18,1,La esfinge,5,2,2,5,18,Galgo Afgano — sereno independiente y distante emocionalmente pero con presencia majestuosa. Relación transaccional basada en el acertijo. Actúa según su propio código.
+19,1,Pigwidgeon,1,4,5,2,19,Chihuahua — pequeño energía extrema afectuoso y expresivo necesita interacción constante. Vínculo entusiasta con Ron desbordante de energía.
+20,1,Trevor,3,1,2,5,0,Sin equivalencia — Trevor representa al usuario que está mejor sin animal de asistencia. Se escapa constantemente porque no quiere estar con nadie. A veces la mejor compañía eres tú mismo.
+21,1,Errol,2,4,3,2,20,Bloodhound — torpe leal perseverante siempre llega aunque tarde. Vínculo real con la familia Weasley a pesar de sus limitaciones.
+22,1,Grawp,2,3,4,3,21,Terranova — enorme torpe con su propia fuerza afectuoso en desarrollo necesita guía paciente. Aprende a conectar con Hermione y Hagrid poco a poco.
+23,1,Murtlap,3,2,2,4,0,Sin equivalencia directa — representa la asistencia funcional sin vínculo emocional. Sus tentáculos tienen propiedades curativas. Útil para explicar que no toda asistencia requiere vínculo afectivo.
+24,1,Snidget dorado,3,2,4,5,22,Whippet — velocidad excepcional esquivo independiente difícil de vincular pero fascinante de observar. Inspiró la Snitch dorada.
+25,1,Demiguise,5,3,1,4,23,Bichón Maltés — calmado suave prefiere evitar el conflicto vínculo selectivo con quien le trata bien. Se vuelve invisible ante el peligro en lugar de atacar.
+26,1,Mooncalf,4,2,2,4,24,Coonhound — activo de noche ritmos propios independiente. Solo sale de noche movimientos lentos y rítmicos bajo la luna llena.
+27,1,Micropuff,5,4,1,2,25,Pomerania — pequeño suave afectuoso busca el contacto constante ideal para regulación emocional. Estimulación mínima presencia reconfortante.
+28,1,Diricawl,5,3,1,3,26,Basset Hound — tranquilo torpe y pacífico sin instinto de ataque. Desaparece ante el peligro en lugar de enfrentarlo. Presencia reconfortante por su calma absoluta.
+29,1,Jobberknoll,4,2,1,4,27,Basenji — el único perro que no ladra silencioso independiente presencia discreta. No emite ningún sonido durante toda su vida hasta el momento de su muerte.
+30,1,Kneazle,4,4,2,4,28,Shiba Inu — independiente leal a su persona desconfiado con extraños criterio propio muy marcado. Detecta personas deshonestas y las rechaza activamente.
+31,1,Graphorn,2,2,4,5,29,Tosa Inu — territorial independiente vínculo muy difícil de establecer. No apto para cualquier perfil. Solo conecta con quien demuestra respeto y paciencia extrema.
+32,1,Unicornio,5,3,2,4,30,Samoyedo — blanco sereno majestuoso vínculo selectivo presencia reconfortante. Solo se acerca a quienes son puros de corazón. Símbolo de pureza y calma en el universo mágico.
