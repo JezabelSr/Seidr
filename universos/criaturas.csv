@@ -31,3 +31,17 @@ criatura_id,universo_id,nombre,calma,vinculo,estimulacion,independencia,raza_rea
 30,1,Kneazle,4,4,2,4,28,Shiba Inu — independiente leal a su persona desconfiado con extraños criterio propio muy marcado. Detecta personas deshonestas y las rechaza activamente.
 31,1,Graphorn,2,2,4,5,29,Tosa Inu — territorial independiente vínculo muy difícil de establecer. No apto para cualquier perfil. Solo conecta con quien demuestra respeto y paciencia extrema.
 32,1,Unicornio,5,3,2,4,30,Samoyedo — blanco sereno majestuoso vínculo selectivo presencia reconfortante. Solo se acerca a quienes son puros de corazón. Símbolo de pureza y calma en el universo mágico.
+
+33,2,Pan,2,5,4,1,1,Golden Retriever — vínculo incondicional adaptable siempre presente. Literalmente el alma de Lyra externalizada. Reflejo emocional constante de su persona.
+34,2,Kirjava,4,5,2,1,2,Labrador Retriever — sereno leal y discreto. Vínculo profundo e incondicional. Reflejo de la madurez y estabilidad de Will.
+35,2,Stelmaria,4,5,3,1,40,Weimaraner — elegante distante leal a una sola persona presencia imponente. Reflejo de la frialdad calculadora de Lord Asriel.
+36,2,El mono dorado,2,5,4,1,31,Pastor Belga Malinois — alerta constante intenso y territorial. Agresivo con extraños leal absolutamente a su persona. Reflejo de la tensión interna de Mrs. Coulter.
+37,2,El gato atigrado,5,5,2,1,32,Borzoi — elegante y sereno observador y tranquilo. Vínculo profundo y selectivo. Reflejo de la sabiduría y calma de Farder Coram.
+38,2,La liebre,3,5,3,1,33,Beagle — curioso alerta y adaptable. Vínculo afectuoso y naturaleza exploradora. Reflejo del pragmatismo y la adaptabilidad de Lee Scoresby.
+39,2,El ganso,4,5,2,2,34,Setter Irlandés — elegante sereno y libre. Vínculo profundo pero con cierta independencia natural. Las brujas pueden separarse de su daemon más que los humanos — rasgo único en el universo.
+40,2,Panserbjørne,3,2,3,5,35,Perro de Groenlandia — ártico puro independiente y con jerarquía y honor propios. Vínculo basado en el respeto mutuo no en la afección. No es una raza para cualquiera. Su armadura es su alma — no necesitan a nadie más.
+41,2,Las brujas de Serafina,4,3,2,5,36,Spitz Finlandés — ártico independiente vínculo selectivo y presencia etérea y silenciosa. Siglos de vida dan perspectiva y calma. Aman una sola vez pero con profundidad absoluta.
+42,2,Los gallivespians,2,3,4,3,37,Pinscher Miniatura — pequeño pero con presencia y determinación que no corresponde a su tamaño. Alerta constante y ágil. Difícil de ignorar a pesar de su tamaño. Intensidad de espía en formato diminuto.
+43,2,Los mulefa,5,4,2,4,38,Leonberger — sereno sabio y acogedor cuando confía. Vínculo profundo con Mary Malone — la integran en su comunidad. Civilización antigua en equilibrio con su entorno. Independiente con normas y sabiduría propias.
+44,2,Balthamos y Baruch,3,5,2,3,39,Vizsla — vínculo intenso y profundo sensible y leal hasta el sacrificio. Amor absoluto entre ellos. Presencia etérea y elegante. Balthamos ansioso e impaciente — Baruch más sereno — juntos se complementan perfectamente.
+
