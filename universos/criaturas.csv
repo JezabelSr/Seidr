@@ -45,3 +45,92 @@ criatura_id,universo_id,nombre,calma,vinculo,estimulacion,independencia,raza_rea
 43,2,Los mulefa,5,4,2,4,38,Leonberger — sereno sabio y acogedor cuando confía. Vínculo profundo con Mary Malone — la integran en su comunidad. Civilización antigua en equilibrio con su entorno. Independiente con normas y sabiduría propias.
 44,2,Balthamos y Baruch,3,5,2,3,39,Vizsla — vínculo intenso y profundo sensible y leal hasta el sacrificio. Amor absoluto entre ellos. Presencia etérea y elegante. Balthamos ansioso e impaciente — Baruch más sereno — juntos se complementan perfectamente.
 
+45,3,Bulbasaur,4,4,2,3,Basset Hound,Tranquilo y paciente. Leal y afectuoso con su entrenador. Energía baja y carácter sereno.
+46,3,Venusaur,5,3,2,4,Chow Chow,Muy calmado y digno. Reservado con extraños. Independiente y de carácter propio.
+47,3,Charmander,3,4,3,2,Cavalier King Charles Spaniel,Afectuoso y gentil. Necesita vínculo cercano. Curioso y activo con moderación.
+48,3,Charmeleon,2,3,4,3,Shiba Inu,Activo y con carácter fuerte. Reservado y algo difícil de manejar. Leal a su manera.
+49,3,Charizard,2,2,4,5,Akita,Poderoso e independiente. Leal solo a quien respeta. Difícil de controlar sin vínculo sólido.
+50,3,Squirtle,4,4,3,2,Samoyed,Amigable y gentil. Adaptable y sociable. Necesita compañía y vínculo constante.
+51,3,Wartortle,4,3,3,3,Whippet,Calmado y afectuoso. Equilibrado entre actividad y descanso. Vínculo moderado.
+52,3,Blastoise,4,3,2,4,Rottweiler,Leal y protector. Calmado y reservado con extraños. Independiente pero fiel a los suyos.
+53,3,Butterfree,3,3,3,4,Greyhound,Gentil e independiente. Noble y poco demandante. No necesita atención constante.
+54,3,Beedrill,2,2,4,4,Belgian Malinois,Muy activo y alerta. Reservado y con propósito claro. Difícil sin dirección firme.
+55,3,Pidgeotto,3,3,3,3,Borzoi,Ágil y digno. Leal pero independiente. Elegante y equilibrado en su carácter.
+56,3,Pidgeot,3,3,3,4,Afghan Hound,Aristocrático e independiente. Distante con extraños. Veloz y de carácter propio.
+57,3,Ekans,3,2,3,4,Italian Greyhound,Sensible y alerta. Reservado e independiente. Poco demandante de vínculo.
+58,3,Arbok,2,2,4,4,Doberman Pinscher,Intimidante y alerta. Leal a su entrenador. Muy activo y difícil sin guía firme.
+59,3,Pikachu,3,5,4,2,American Eskimo Dog,Juguetón e inteligente. Muy sociable y necesita vínculo total. Activo y expresivo.
+60,3,Raichu,3,4,3,3,Keeshond,Amigable y vivo. Vínculo fuerte y equilibrado. Sociable y adaptable.
+61,3,Clefairy,4,4,2,2,Papillon,Amigable y alegre. Alerta y necesita compañía cercana. Tranquilo y afectuoso.
+62,3,Clefable,4,3,2,3,Collie,Devoto y gracioso. Amable y equilibrado. Vínculo sólido sin ser dependiente.
+63,3,Vulpix,4,3,2,3,Japanese Chin,Noble y encantador. Reservado con extraños. Sensible y elegante.
+64,3,Ninetales,5,2,1,5,Shetland Sheepdog,Muy calmado e inteligente. Muy independiente y reservado. Difícil de vincular.
+65,3,Jigglypuff,4,4,2,2,Bichon Frise,Juguetón y curioso. Muy sociable y necesita atención. Tranquilo y encantador.
+66,3,Wigglytuff,4,4,2,2,Maltese,Gentil y encantador. Muy sociable y necesita compañía. Afectuoso y tranquilo.
+67,3,Diglett,3,3,3,4,Dachshund,Curioso y espabilado. Independiente y con carácter propio. Activo a su manera.
+68,3,Dugtrio,3,3,3,4,Australian Cattle Dog,Alerta y curioso. Independiente y muy activo. Difícil sin dirección clara.
+69,3,Meowth,3,2,3,4,Basenji,Independiente e inteligente. Reservado y hace lo que quiere. Leal a su manera.
+70,3,Persian,4,2,2,5,Scottish Terrier,Confiado e independiente. Digno y distante. Poco afectuoso con extraños.
+71,3,Psyduck,3,3,3,2,Pug,Encantador y travieso. Necesita apoyo y guía. Algo torpe pero muy afectuoso.
+72,3,Golduck,4,3,2,3,Cocker Spaniel,Gentil e inteligente. Equilibrado y agradable. Amigable y fiable.
+73,3,Primeape,1,2,5,3,Staffordshire Bull Terrier,Valiente y tenaz. Muy activo y difícil de manejar. Necesita guía firme.
+74,3,Growlithe,3,5,3,1,Golden Retriever,Amigable y devoto. Inteligente y necesita vínculo total. Leal por encima de todo.
+75,3,Arcanine,3,5,4,2,Labrador Retriever,Amigable y muy activo. Sociable y devoto. Necesita vínculo y ejercicio constante.
+76,3,Abra,4,2,2,5,Sloughi,Reservado y sereno. Noble e independiente. Muy difícil de conectar. Esquivo por naturaleza.
+77,3,Kadabra,3,2,3,4,Tibetan Spaniel,Inteligente y seguro de sí mismo. Reservado e independiente. Va a lo suyo.
+78,3,Alakazam,3,2,3,5,Border Collie,Inteligentísimo y reservado. Muy independiente. Necesita estimulación mental constante.
+79,3,Victreebel,2,2,4,4,Bloodhound,Independiente e inquisitivo. Sigue su propio instinto. Difícil de redirigir.
+80,3,Ponyta,4,3,3,3,Irish Setter,Activo y dulce. Amigable y energético pero manejable. Necesita espacio y movimiento.
+81,3,Rapidash,3,3,4,4,Weimaraner,Veloz e intrépido. Necesita espacio y actividad. Obediente con vínculo sólido.
+82,3,Slowpoke,5,3,1,3,Clumber Spaniel,Muy tranquilo y pausado. Amable y sin prisa. Equilibrado y fácil de llevar.
+83,3,Slowbro,5,3,1,3,Sussex Spaniel,Calmado y equilibrado. Reservado y sin urgencia. Tranquilo y poco demandante.
+84,3,Farfetch'd,3,3,3,4,Canaan Dog,Alerta y vigilante. Independiente y peculiar. Va a lo suyo con carácter propio.
+85,3,Muk,3,3,3,3,Neapolitan Mastiff,Leal y digno. Reservado e imponente. Va a lo suyo sin necesitar atención constante.
+86,3,Gastly,3,2,3,4,Xoloitzcuintli,Leal pero misterioso. Alerta e independiente. Reservado y difícil de leer.
+87,3,Haunter,2,3,4,3,Bull Terrier,Travieso y encantador. Juguetón pero impredecible. Necesita guía con humor.
+88,3,Gengar,2,3,4,3,Dalmatian,Inteligente y travieso. Muy activo y con personalidad fuerte. Necesita dirección clara.
+89,3,Onix,3,3,3,4,Tibetan Mastiff,Independiente y reservado. Imponente y difícil de manejar sin confianza mutua.
+90,3,Krabby,2,2,4,4,Kai Ken,Ágil y leal a los suyos. Reservado con extraños y con carácter fuerte.
+91,3,Cubone,4,3,2,3,Kuvasz,Leal y valiente. Dulce pero reservado con extraños. Necesita tiempo para confiar.
+92,3,Marowak,3,3,3,4,Komondor,Leal y digno. Valiente e independiente. Protector de los suyos a su manera.
+93,3,Koffing,3,3,3,3,Boerboel,Tranquilo y confiado. Inteligente y calmado. Sin necesidades extremas.
+94,3,Weezing,3,3,3,3,Caucasian Shepherd Dog,Imponente y reservado. Independiente y va a lo suyo. Difícil de manejar sin respeto.
+95,3,Chansey,5,5,1,1,Newfoundland,Dulce y paciente. Devoto y vive para cuidar a otros. Muy tranquilo y necesita vínculo total.
+96,3,Kangaskhan,4,5,2,2,Bernese Mountain Dog,Calmado y muy protector. Familiar y fiel a los suyos. Necesita vínculo fuerte.
+97,3,Horsea,4,3,2,3,Cavalier King Charles Spaniel,Afectuoso y gentil. Gracioso y necesita vínculo cercano. Tranquilo y sensible.
+98,3,Goldeen,4,3,2,3,Norwegian Elkhound,Amigable y confiado. Fiable y equilibrado. Fácil de llevar y estable.
+99,3,Staryu,3,2,3,5,Rhodesian Ridgeback,Digno y muy independiente. Equilibrado y reservado. No necesita atención constante.
+100,3,Mr. Mime,3,3,3,3,Poodle (Standard),Inteligente y orgulloso. Expresivo y con personalidad marcada. Adaptable y listo.
+101,3,Scyther,2,2,4,4,Irish Water Spaniel,Valiente y trabajador. Reservado y muy activo. Necesita propósito claro.
+102,3,Tauros,2,2,5,4,Cane Corso,Imponente y majestuoso. Muy activo y difícil de manejar. Necesita guía firme.
+103,3,Magikarp,4,3,2,3,Saint Bernard,Aparentemente torpe pero paciente y con gran potencial. Amable y sin pretensiones.
+104,3,Gyarados,1,2,5,5,Bullmastiff,Imponente y valiente. Muy difícil de controlar. Leal solo con vínculo muy sólido.
+105,3,Lapras,5,4,1,2,Leonberger,Gentil y amigable. Muy tranquilo y apegado a su familia. Noble y fácil de llevar.
+106,3,Ditto,3,3,3,3,Havanese,Adaptable e inteligente. Gracioso y se amolda a cualquier situación. Equilibrado.
+107,3,Eevee,3,4,3,2,Icelandic Sheepdog,Amigable y juguetón. Curioso y necesita vínculo cercano. Muy adaptable.
+108,3,Vaporeon,4,4,2,2,Portuguese Water Dog,Afectuoso y atlético. Aventurero y muy ligado a su entrenador. Activo pero calmado.
+109,3,Jolteon,2,3,5,3,Giant Schnauzer,Leal y muy alerta. Muy activo y con carácter fuerte. Necesita actividad constante.
+110,3,Flareon,3,3,4,3,Soft Coated Wheaten Terrier,Amigable y devoto. Activo y con carácter marcado. Necesita movimiento y vínculo.
+111,3,Porygon,3,2,3,4,Miniature Schnauzer,Inteligente y obediente. Alerta y poco emocional. Independiente y metódico.
+112,3,Snorlax,5,3,1,4,Great Pyrenees,Muy calmado y paciente. Independiente y difícil de motivar. Va a su ritmo.
+113,3,Dratini,4,3,2,3,Eurasier,Calmado y familiar. Reservado con extraños y equilibrado. Vínculo moderado y estable.
+114,3,Dragonair,4,3,2,4,Finnish Lapphund,Ágil y alerta. Reservado y elegante. Independiente pero leal a los suyos.
+115,3,Dragonite,4,4,3,3,Newfoundland,Dulce y paciente. Devoto e imponente pero de corazón noble. Protector y amigable.
+116,3,Espeon,4,3,2,4,Belgian Tervuren,Inteligente y elegante. Alerta y reservado con extraños. Intuitivo y va a lo suyo.
+117,3,Umbreon,4,4,2,3,Chesapeake Bay Retriever,Leal y protector. Reservado y sensible. Difícil de ganar pero fiel para siempre.
+118,3,Leafeon,5,3,1,4,Irish Wolfhound,Sereno y digno. Tranquilo e independiente. Conectado a su entorno natural.
+119,3,Glaceon,5,2,1,5,Saluki,Gentil pero muy distante. Muy independiente y digno. Difícil de vincular por naturaleza.
+120,3,Sylveon,5,5,1,1,Coton de Tulear,Encantador y alegre. Muy afectuoso y necesita vínculo total. Vive para estar con los suyos.
+
+121,4,Totoro grande,5,4,1,4,Gran Danés,Imponente pero dulce y paciente. Protector y tranquilo. Aparece cuando se necesita.
+122,4,GatoBus,3,2,3,5,Jindo,Misterioso e independiente. Aparece solo cuando decide. Difícil de vincular.
+123,4,Ponyo forma pez,2,5,5,1,Nova Scotia Duck Tolling Retriever,Curiosa y muy activa. Vínculo total e inmediato. Necesita compañía constante.
+124,4,Jiji,3,4,3,3,Lhasa Apso,Sarcástico e independiente pero leal. Confiado y algo comical.
+125,4,Ohmu,5,3,1,5,Central Asian Shepherd Dog,Muy calmado y poderoso. Vínculo posible solo con respeto profundo. Muy independiente.
+126,4,Teto,3,4,3,2,Pomeranian,Pequeño y nervioso al principio. Muy leal cuando confía. Alerta y vivo.
+127,4,Los Kodama,5,2,1,5,Bergamasco Sheepdog,Silenciosos y neutros. Muy independientes. Presencia serena sin necesidad de vínculo.
+128,4,Espantapájaros Cabeza de Nabo,4,5,2,1,Japanese Spitz,Torpe y afectuoso. Vínculo total con Sophie. Necesita compañía constante.
+129,4,Susuwataris,3,3,4,3,Boston Terrier,Muy activos y curiosos. Trabajan en grupo. Alegres y sorprendentemente adaptables.
+130,4,Bebé ratón,4,5,2,1,Biewer Terrier,Pequeño y muy afectuoso. Necesita compañía y vínculo constante.
+131,4,Lobos de Moro,2,3,4,5,Kishu Ken,Poderosos y salvajes. Leales solo a los suyos. Muy difíciles de vincular.
+

@@ -68,3 +68,44 @@ personaje_id,universo_id,nombre,rol,hiperfoco,regulacion_emocional,sensorialidad
 65,2,Metatrón,antagonista,5,2,2,2,5,1,4,5,verbal_indirecto,teorico,autonomo,neutro,Hiperfoco absoluto en el control total de todos los mundos. Fue humano y ascendió — sabiduría de eones. Controla la Iglesia y la Autoridad desde las sombras. Las relaciones son instrumentos de control.
 66,2,El padre Gomez,antagonista,5,3,2,2,3,2,3,4,verbal_indirecto,teorico,autonomo,neutro,Hiperfoco absoluto en cumplir la misión encomendada por la Iglesia. La fe como regulador emocional constante. Sigue el rastro de Mary Malone con paciencia y precisión metódica.
 
+67,3,Ash,protagonista,5,2,2,3,3,4,3,1,directo-emocional,experiencial,abierto-empático,neutro,Hiperfoco total en Pokémon y ser Maestro. Impulsivo y desorganizado pero conecta fácil con personas y Pokémon.
+68,3,Misty,protagonista,2,2,2,3,3,3,3,3,directo-brusco,competitivo-práctico,selectivo-leal,neutro,Pasión por Pokémon de agua pero no restringe su mundo. Temperamental y reactiva pero leal.
+69,3,Brock,protagonista,3,3,2,4,4,4,3,4,empático-mediador,metódico-investigador,cuidador-abierto,neutro,Figura de apoyo del grupo. Metódico y organizador. Pierde los papeles con las chicas.
+70,3,Gary Oak,rival,3,3,2,3,4,2,3,4,directo-provocador,metódico-competitivo,selectivo-competitivo,neutro,Arrogante y competitivo. Evoluciona hacia la investigación. Organizado y con objetivos claros.
+71,3,Profesor Oak,mentor,5,4,2,4,5,3,2,4,didáctico-reflexivo,investigador-teórico,amable-distante,neutro,La investigación Pokémon consume su vida entera. Muy didáctico pero ensimismado en su trabajo.
+72,3,Dawn,protagonista,2,3,2,4,3,4,3,3,expresivo-entusiasta,observacional-práctico,abierto-colaborativo,neutro,Coordinadora Pokémon. Optimista pero se derrumba ante el fracaso. Muy sociable y expresiva.
+73,3,Iris,protagonista,3,3,3,3,4,3,5,3,directo-sin filtro,intuitivo-observacional,selectivo-natural,hiperactivo-natural,Quiere ser Maestra de Pokémon Dragón. Creció en el bosque. Muy ágil físicamente.
+74,3,Cilan,protagonista,4,4,4,4,4,4,3,4,teatral-elaborado,analítico-clasificador,cuidador-entusiasta,hipersensible-gustativo,Sommelier que evalúa todo constantemente. Muy sensible a sabores y olores. Figura de apoyo.
+75,3,Serena,protagonista,2,3,2,3,3,3,3,3,reflexivo-cuidadoso,observacional-práctico,selectivo-leal,neutro,Coordinadora Pokémon. Insegura pero determinada. Aprende por imitación y observación.
+76,3,Clemont,protagonista,4,3,2,3,5,2,1,3,técnico-nervioso,teórico-experimental,introvertido-leal,neutro,Inventor y Líder de Gimnasio. Muy torpe físicamente. Más cómodo con máquinas que personas.
+77,3,Tracey,protagonista,3,4,3,3,4,3,3,4,tranquilo-reflexivo,observacional-registrador,amable-tranquilo,hipersensible-visual,Observador y dibujante de Pokémon. Muy metódico y documentador. Acaba trabajando con Oak.
+78,3,Jessie,antagonista,3,1,2,4,2,4,3,1,teatral-dramático,impulsivo-repetitivo,protagonista-selectivo,neutro,Muy explosiva y dramática. Vínculo leal con James y Meowth. Repite patrones constantemente.
+79,3,James,antagonista,3,3,3,3,2,4,3,2,teatral-sensible,impulsivo-repetitivo,leal-empático,neutro,Coleccionista obsesivo. Más sensible que Jessie. Vínculo leal con Jessie y Meowth.
+80,3,Giovanni,antagonista,4,4,2,4,4,1,3,5,autoritario-directo,estratégico-analítico,instrumental-aislado,neutro,Líder del Team Rocket. Frío y calculador. Usa a las personas como herramientas.
+81,3,Enfermera Joy,secundario,3,5,2,4,3,5,3,4,amable-claro,metódico-práctico,abierto-servicial,neutro,Vocación total por cuidar Pokémon. Siempre calmada. Gestiona el Centro Pokémon sola.
+82,3,Oficial Jenny,secundario,2,4,2,4,3,4,4,4,autoritario-amable,metódico-práctico,abierto-protector,neutro,Policía protectora de la comunidad. Organizada y profesional. Sigue protocolos con eficacia.
+83,3,Profesor Kukui,secundario,3,4,3,4,4,5,4,3,entusiasta-didáctico,experimental-práctico,abierto-acogedor,neutro,Investiga movimientos Pokémon. Muy positivo y enérgico. Acoge a Ash en Alola. Muy sociable.
+
+84,4,Chihiro,protagonista,2,2,3,3,4,3,3,3,tímido-resolutivo,adaptativo-experiencial,introvertido-leal,neutro,Niña normal arrojada al mundo espiritual. Crece enormemente a lo largo de la historia. Forma vínculos profundos.
+85,4,Haku,secundario,3,5,3,3,4,2,4,4,directo-preciso,estratégico-intuitivo,reservado-leal,neutro,Espíritu del río sereno y calculado. Solo se abre con quien confía profundamente. Protector y planificador.
+86,4,Yubaba,antagonista,4,2,2,4,4,2,3,5,intimidante-expresivo,estratégico-controlador,instrumental-dominante,neutro,Explosiva y autoritaria pero calculada. Controla la casa de baños con mano de hierro. Vínculo real solo con su hijo.
+87,4,Lin,secundario,2,3,2,4,3,3,3,4,directo-sin filtro,práctico-eficiente,reservado-leal,neutro,Directa y sin filtro. Muy leal con quien aprecia. Organizada y eficiente en su trabajo diario.
+88,4,Nausicaä,protagonista,4,4,5,4,5,4,4,4,empático-claro,investigador-intuitivo,abierto-inspirador,hipersensible-natural,Investigadora del ecosistema. Percibe el entorno natural con sensibilidad extraordinaria. Líder natural e inspiradora.
+89,4,Lord Yupa,secundario,3,5,2,4,4,3,4,4,preciso-sabio,observacional-analítico,reservado-respetado,neutro,Sereno y ecuánime en cualquier situación. Pocas palabras con mucho peso. Espadachín excepcional.
+90,4,Kushana,antagonista,4,4,2,4,4,2,4,5,autoritario-preciso,estratégico-analítico,distante-instrumental,neutro,Fría y controlada. Estratega militar nata. Lidera ejércitos con precisión total.
+91,4,Ashitaka,protagonista,3,5,3,4,4,4,5,4,honesto-directo,observacional-adaptativo,abierto-empático,neutro,Extraordinariamente calmado incluso con la maldición. Arquero excepcional. Conecta con personas muy distintas.
+92,4,San,protagonista,4,2,4,2,3,1,5,3,directo-agresivo,instintivo-experiencial,aislado-selectivo,hipersensible-natural,Criada por lobos. Rechaza el mundo humano. Guerrera salvaje con control corporal instintivo extraordinario.
+93,4,Lady Eboshi,antagonista,4,4,2,4,4,3,3,5,carismático-persuasivo,estratégico-pragmático,protector-selectivo,neutro,Carismática y pragmática. Organiza y lidera Ciudad del Hierro con precisión y visión de futuro.
+94,4,Sophie,protagonista,2,3,2,3,3,3,3,4,directo-práctico,experiencial-adaptativo,reservado-leal,neutro,Resignada al principio pero se libera a lo largo de la historia. Muy organizada y trabajadora.
+95,4,Howl,protagonista,3,1,4,4,4,3,4,2,teatral-encantador,intuitivo-brillante,carismático-esquivo,hipersensible-estético,Dramático y extremo. Mago brillante pero caótico y evitativo. Huye de los problemas antes que enfrentarlos.
+96,4,Calcifer,secundario,3,3,3,4,3,3,2,3,sarcástico-directo,observacional-perspicaz,gruñón-leal,neutro,Gruñón y quejica pero leal con los del castillo. Sarcástico y muy expresivo a su manera.
+97,4,Kiki,protagonista,3,3,2,3,3,3,4,3,amable-directo,autodidacta-experiencial,abierto-progresivo,neutro,Bruja en busca de su lugar. Vulnerable cuando pierde sus poderes. Vuela con gran destreza.
+98,4,Ponyo,protagonista,5,3,4,3,3,5,3,1,directo-entusiasta,imitativo-impulsivo,abierto-total,hipersensible-dual,Obsesionada con Sosuke y el mundo humano. Totalmente impulsiva. Abierta con todo el mundo sin excepción.
+99,4,Porco Rosso,protagonista,3,4,2,3,4,2,5,3,sarcástico-lacónico,técnico-experiencial,aislado-selectivo,neutro,Voluntariamente aislado. Piloto excepcional. Oculta sus emociones tras el sarcasmo.
+100,4,Sheeta,protagonista,2,4,3,3,3,3,3,3,suave-honesto,experiencial-adaptativo,reservado-leal,neutro,Serena incluso en peligro extremo. Conectada a su cristal y a Laputa. Forma vínculos profundos con rapidez.
+101,4,Pazu,protagonista,4,3,2,4,4,4,4,3,directo-honesto,autodidacta-práctico,abierto-generoso,neutro,Mecánico autodidacta. Muy ágil físicamente. Abierto y generoso con todos.
+102,4,Satsuki,protagonista,2,3,4,4,4,4,3,4,claro-responsable,metódico-organizado,abierto-integrador,hipersensible-perceptivo,Madura y responsable para su edad. Percibe seres que otros no pueden ver. Gestiona la casa y a Mei con eficacia.
+103,4,Mei,protagonista,4,2,5,3,2,4,3,1,directo-sin filtro,imitativo-impulsivo,abierto-sin filtro,hipersensible-perceptivo,Percibe seres invisibles para otros. Totalmente impulsiva y sin filtro. Obsesionada con Totoro desde que lo descubre.
+104,4,El Baron,secundario,3,5,3,5,4,3,4,5,elocuente-elegante,observacional-sabio,amable-distante,neutro,Extraordinariamente elocuente y sereno. Planificador nato. Ayuda a quienes lo necesitan con precisión total.
+105,4,Muta,secundario,2,3,3,3,3,2,2,3,brusco-directo,observacional-perspicaz,gruñón-reservado,neutro,Gruñón y brusco pero listo aunque no lo aparente. Pocos vínculos reales. Muy sensible a olores y comida.
+106,4,Arrietty,protagonista,3,3,4,3,4,3,5,3,directo-honesto,observacional-curioso,reservado-leal,hipersensible-dimensional,Muy ágil y precisa en un mundo gigante. Curiosa y observadora. Forma vínculos profundos cuando confía.
