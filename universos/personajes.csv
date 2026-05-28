@@ -109,3 +109,17 @@ personaje_id,universo_id,nombre,rol,hiperfoco,regulacion_emocional,sensorialidad
 104,4,El Baron,secundario,3,5,3,5,4,3,4,5,elocuente-elegante,observacional-sabio,amable-distante,neutro,Extraordinariamente elocuente y sereno. Planificador nato. Ayuda a quienes lo necesitan con precisión total.
 105,4,Muta,secundario,2,3,3,3,3,2,2,3,brusco-directo,observacional-perspicaz,gruñón-reservado,neutro,Gruñón y brusco pero listo aunque no lo aparente. Pocos vínculos reales. Muy sensible a olores y comida.
 106,4,Arrietty,protagonista,3,3,4,3,4,3,5,3,directo-honesto,observacional-curioso,reservado-leal,hipersensible-dimensional,Muy ágil y precisa en un mundo gigante. Curiosa y observadora. Forma vínculos profundos cuando confía.
+
+107,5,Hipo,protagonista,4,3,3,3,5,3,3,4,sarcástico-reflexivo,autodidacta-creativo,introvertido-leal,neutro,Ingeniero nato y autodidacta. Aprende de forma creativa y resuelve problemas con ingenio. Forma vínculos profundos cuando confía.
+108,5,Astrid,protagonista,4,4,2,4,4,3,5,4,directo-sin filtro,metódico-disciplinado,reservado-leal,neutro,Guerrera disciplinada y metódica. Directa y sin filtro. Leal y organizada con propósito claro.
+109,5,Patapez,secundario,4,3,3,3,5,3,2,3,técnico-nervioso,teórico-memorizador,dependiente-leal,neutro,Experto en dragones. Absorbe y memoriza información constantemente. Torpe físicamente pero brillante teóricamente.
+110,5,Mocoso,secundario,3,2,2,3,3,4,4,2,directo-agresivo,competitivo-impulsivo,dominante-selectivo,neutro,Arrogante y explosivo. Muy leal con su grupo. Aprende por competición y orgullo.
+111,5,Chusco,secundario,2,3,2,4,2,5,3,2,gracioso-expresivo,impulsivo-experiencial,abierto-inseparable,neutro,Muy gracioso y despreocupado. Vínculo extraordinario con Brusca. Conecta fácil con todos.
+112,5,Brusca,secundario,2,2,2,4,2,5,3,2,sarcástico-expresivo,impulsivo-experiencial,abierto-inseparable,neutro,Sarcástica y explosiva. Vínculo extraordinario con Chusco. Abierta con todos pero inseparable de su hermano.
+113,5,Bocón,secundario,2,4,2,5,3,4,3,3,gracioso-expresivo,experiencial-sabio,abierto-protector,neutro,El humor es su forma de comunicarse. Figura de apoyo para Hipo. Sabio y experimentado a su manera.
+114,5,Valka,secundario,5,3,4,2,5,1,5,3,bloqueado-honesto,autodidacta-investigador,aislado-selectivo,hipersensible-natural,Vive 20 años aislada con dragones. Conoce a los dragones mejor que nadie. Le cuesta enormemente comunicarse con personas.
+115,5,Estoico el inmenso,secundario,3,3,2,3,3,3,4,4,autoritario-directo,experiencial-tradicional,reservado-respetado,neutro,Líder serio y contenido. Pocas palabras con mucho peso. Organizado y responsable en sus decisiones.
+116,5,Drago Puño Sangriento,antagonista,5,3,2,4,4,1,4,5,intimidante-carismático,estratégico-analítico,instrumental-aislado,neutro,Obsesionado con dominar todos los dragones. Usa a las personas como herramientas. Planificador obsesivo y poderoso.
+117,5,Eret,secundario,2,4,2,4,3,3,4,3,seguro-directo,experiencial-adaptativo,reservado-leal,neutro,Cazador de dragones experimentado. Pragmático y adaptable. Leal cuando elige un bando.
+
+
