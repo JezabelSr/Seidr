@@ -143,3 +143,58 @@ criatura_id,universo_id,nombre,calma,vinculo,estimulacion,independencia,raza_rea
 138,5,Asaltanubes,3,3,3,4,Briard,Poderoso e independiente. Leal a Valka. Reservado con extraños.
 139,5,Furia Diurna,4,2,2,5,Peruvian Inca Orchid,Independiente y esquiva. Leal solo cuando elige. Noble y difícil de vincular.
 
+140,6,Yago,2,3,4,3,Affenpinscher,Ruidoso y sarcástico. Leal a su manera. Con mucho carácter y muy expresivo.
+141,6,Timothy Q. Mouse,3,5,3,2,Brussels Griffon,Valiente y leal. Pequeño pero atrevido. Vínculo total con Dumbo.
+142,6,Gato de Cheshire,3,1,3,5,Pharaoh Hound,Misterioso e independiente. Aparece cuando quiere. Difícil de vincular.
+143,6,Arquímedes,3,3,3,4,Scottish Deerhound,Inteligente y gruñón. Independiente y digno. Leal a su manera.
+144,6,Rey Louie,2,3,5,3,Boxer,Caótico y muy sociable. Muy activo y divertido. Le encanta la atención.
+145,6,Baloo,4,4,3,3,Black and Tan Coonhound,Muy tranquilo y despreocupado. Afectuoso y leal. Fácil de llevar.
+146,6,Winnie Pooh,5,5,1,1,Bolognese,Muy tranquilo y afectuoso. Vínculo total. Necesita compañía constante.
+147,6,Ígor,3,4,2,2,Old English Sheepdog,Leal y servicial. Algo torpe pero siempre dispuesto. Necesita guía.
+148,6,Gurgi,3,5,3,1,Welsh Springer Spaniel,Muy leal y ansioso. Necesita vínculo constante. Alegre y servicial.
+149,6,Sebastián,3,4,3,2,Norwegian Buhund,Listo y expresivo. Leal aunque gruñón. Necesita que las cosas salgan bien.
+150,6,Flounder,3,5,3,1,Miniature American Shepherd,Leal y devoto. Algo nervioso pero vínculo total con Ariel.
+151,6,Genio,3,5,5,2,Harrier,Muy activo y sociable. Extraordinariamente expresivo. Necesita vínculo total.
+152,6,Abu,3,5,4,2,Norwich Terrier,Leal y curioso. Muy activo y alerta. Vínculo total con Aladdin.
+153,6,Hugo Víctor y Laverne,4,4,3,3,Beagle,Amigables y curiosos. Leales a Quasimodo. Equilibrados y alegres.
+154,6,Pegaso,3,5,4,2,Brittany,Muy activo y leal. Vínculo total con Hércules. Alegre y expresivo.
+155,6,Filoctetes,3,4,3,3,Standard Schnauzer,Listo y valiente. Leal aunque gruñón. Con mucho carácter.
+156,6,Mushu,2,5,5,2,Toy Fox Terrier,Muy expresivo y valiente. Vínculo total con Mulán. Muy activo e impulsivo.
+157,6,Cri-Kee,4,4,2,2,Norfolk Terrier,Tranquilo y leal. Alegre y sin miedo. Necesita compañía cercana.
+158,6,Hermanito,4,5,2,1,Redbone Coonhound,Tranquilo y muy afectuoso. Vínculo total. Necesita compañía constante.
+159,6,Terk,2,4,5,3,Swedish Vallhund,Muy activa y sociable. Leal a Tarzán. Enérgica y expresiva.
+160,6,Tantor,4,4,2,2,Alaskan Malamute,Calmado y afectuoso. Leal y juguetón. Algo ansioso ante lo desconocido.
+161,6,Stitch,2,5,5,2,German Shorthaired Pointer,Muy activo e inteligente. Vínculo total con Lilo. Aprende rápido.
+162,6,Sulley,4,5,2,2,German Longhaired Pointer,Calmado y familiar. Muy leal. Protector y afectuoso.
+163,6,Mike Wazowski,3,4,4,3,Lancashire Heeler,Muy expresivo y versátil. Leal a Sulley. Afectuoso e inteligente.
+164,6,Koda,3,5,4,1,Teddy Roosevelt Terrier,Juguetón y muy leal. Necesita compañía constante. Curioso y adaptable.
+165,6,Remy,3,4,3,3,Lagotto Romagnolo,Inteligente y afectuoso. Curioso y poco exigente. Leal cuando confía.
+166,6,Dug,3,5,4,1,Golden Retriever,Muy leal y afectuoso. Fácilmente distraído. Necesita vínculo total.
+167,6,Pascal,4,5,2,2,Cairn Terrier,Tranquilo y leal. Alegre y activo. Vínculo total con Rapunzel.
+168,6,Maximus,3,4,4,3,Irish Red and White Setter,Valiente y determinado. Leal pero con carácter fuerte. Muy activo.
+169,6,Abuelo Pabbie,5,3,1,4,Otterhound,Sereno y sabio. Independiente. Aparece cuando se necesita.
+170,6,Olaf,4,5,3,1,Barbet,Dulce y muy afectuoso. Vínculo total. Amigable con todos.
+171,6,Baymax,5,5,1,2,Spinone Italiano,Muy tranquilo y paciente. Devoto y protector. Fácil de llevar.
+172,6,Bing Bong,4,5,3,1,Shih Tzu,Muy afectuoso y juguetón. Vínculo total. Necesita compañía constante.
+173,6,Dante,3,5,4,1,Xoloitzcuintli,Muy leal y activo. Vínculo total con Miguel. Raza sagrada que guía a los muertos.
+174,6,Pepita,3,3,3,4,Ibizan Hound,Familiar pero independiente. Reservada con extraños. Va a lo suyo.
+175,6,Bruni,4,4,3,2,Chinese Crested,Pequeño y afectuoso. Alerta y vivo. Necesita vínculo cercano.
+176,6,El Nokk,4,2,2,5,Azawakh,Leal pero muy independiente. Difícil de vincular. Sereno y poderoso.
+177,6,Sisu,3,5,4,2,West Highland White Terrier,Muy leal y entusiasta. Vínculo total. Alegre y con mucho carácter.
+178,6,Tuk Tuk,4,4,2,2,Boykin Spaniel,Tranquilo y afectuoso. Leal y fácil de llevar. Necesita compañía.
+179,6,Machiavelli,4,3,2,4,Pekingese,Digno y reservado. Va a lo suyo. Leal a su manera pero muy independiente.
+180,6,Sox,4,4,3,3,Nederlandse Kooikerhondje,Listo y alerta. Leal y devoto. Rápido y muy inteligente.
+181,6,Estrella,4,5,2,1,Poodle (Toy),Muy afectuosa y devota. Vínculo total. Ágil e inteligente.
+182,6,Pena,2,3,4,3,Smooth Fox Terrier,Muy activo e independiente. Divertido pero difícil de manejar.
+183,6,Pánico,3,3,3,3,Wire Fox Terrier,Alerta y nervioso. Leal a su manera. Con carácter propio.
+184,6,Sven,4,5,3,1,Bluetick Coonhound,Muy leal y devoto. Vínculo total con Kristoff. Tenaz y afectuoso.
+185,6,Meeko,2,3,5,3,Schipperke,Muy activo e inquisitivo. Travieso y curioso. Difícil de controlar.
+186,6,Flit,3,3,3,4,Dandie Dinmont Terrier,Independiente y orgulloso. Leal a su manera. Reservado con extraños.
+187,6,Percy,4,3,2,3,Pug,Tranquilo y algo arrogante. Mimado y leal cuando confía. Sin necesidades extremas.
+188,6,Jack,3,4,4,2,Rat Terrier,Curioso y leal. Muy activo e inquisitivo. Necesita vínculo cercano.
+189,6,Gus,4,5,2,1,French Bulldog,Torpe y muy leal. Dulce y afectuoso. Necesita compañía constante.
+190,6,Angus,4,4,3,3,Beauceron,Fiel y obediente. Fuerte y poderoso. Leal a Mérida.
+191,6,Pua,5,5,1,1,Field Spaniel,Muy dulce y afectuoso. Vínculo total con Moana. Tranquilo y sensible.
+192,6,Akela,5,3,2,4,Hovawart,Sabio y fiel. Muy independiente. Protector a su manera.
+193,6,Raksha,4,5,2,3,Belgian Sheepdog (Groenendael),Maternal y protectora. Muy leal a los suyos. Brillante y vigilante.
+194,6,Valentino,2,4,5,2,Parson Russell Terrier,Muy activo y travieso. Leal y sociable. Imposible de parar.

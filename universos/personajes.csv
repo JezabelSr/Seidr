@@ -122,4 +122,58 @@ personaje_id,universo_id,nombre,rol,hiperfoco,regulacion_emocional,sensorialidad
 116,5,Drago Puño Sangriento,antagonista,5,3,2,4,4,1,4,5,intimidante-carismático,estratégico-analítico,instrumental-aislado,neutro,Obsesionado con dominar todos los dragones. Usa a las personas como herramientas. Planificador obsesivo y poderoso.
 117,5,Eret,secundario,2,4,2,4,3,3,4,3,seguro-directo,experiencial-adaptativo,reservado-leal,neutro,Cazador de dragones experimentado. Pragmático y adaptable. Leal cuando elige un bando.
 
+118,6,Mudito,secundario,3,4,4,1,3,2,3,2,reservado-gestual,observacional-silencioso,reservado-anhelante,hipersensible-social,Mudo y muy sensible. Se comunica por gestos. Reservado pero con vínculos profundos cuando confía.
+119,6,Pinocho,protagonista,2,2,3,3,2,4,3,1,directo-sin filtro,imitativo-ingenuo,abierto-ingenuo,neutro,Impulsivo e ingenuo. Fácilmente manipulable. Aprende por experiencia dura.
+120,6,Alicia,protagonista,3,3,4,3,4,3,3,2,curioso-directo,curioso-reflexivo,abierto-adaptativo,neutro,Curiosa y sensible al entorno extraño. Se pierde fácil pero aprende constantemente.
+121,6,Sombrerero Loco,secundario,4,1,4,4,3,3,2,1,teatral-caótico,asociativo-caótico,excéntrico-selectivo,hipersensible-ambiental,Obsesivo con el té y muy caótico. Explosivo e impredecible. Pensamiento muy asociativo.
+122,6,Conejo Blanco,secundario,4,1,3,3,3,2,3,4,ansioso-urgente,metódico-rígido,reservado-instrumental,neutro,Obsesionado con la puntualidad. Muy ansioso y meticuloso. Se derrumba ante cualquier imprevisto.
+123,6,Arthur/Grillo,secundario,3,5,2,4,3,3,3,4,empático-claro,reflexivo-moral,abierto-protector,neutro,Conciencia moral extraordinaria. Muy equilibrado y empático. Perseverante y organizado.
+124,6,Tigger,secundario,2,2,4,4,2,5,4,1,entusiasta-impulsivo,impulsivo-experiencial,abierto-total,neutro,Hiperactivo e impulsivo. Muy sociable y expresivo. Sin planificación alguna.
+125,6,Piglet,secundario,2,2,4,2,3,3,3,3,tímido-ansioso,práctico-cauteloso,dependiente-leal,neutro,Muy ansioso y sensible. Tímido pero leal. Se bloquea bajo presión aunque intenta actuar.
+126,6,Tod,protagonista,2,3,3,3,3,4,3,3,directo-curioso,experiencial-adaptativo,abierto-leal,neutro,Sociable y curioso. Aprende por experiencia. Equilibrado y adaptable.
+127,6,Basile,protagonista,5,3,4,3,5,2,3,4,técnico-analítico,investigador-deductivo,reservado-instrumental,hipersensible-visual,Hiperfoco total en resolver casos. Muy analítico y observador. Reservado y poco sociable.
+128,6,Ariel,protagonista,4,3,4,3,3,4,3,2,expresivo-no verbal,curioso-imitativo,abierto-apasionado,hipersensible-ambiental,Obsesionada con el mundo humano. Transición sensorial extrema entre dos mundos. Impulsiva y apasionada.
+129,6,Bella,protagonista,4,4,2,4,5,3,3,4,elocuente-reflexivo,lector-autodidacta,reservado-leal,neutro,Lectora voraz y autodidacta. Muy elocuente y organizada. Reservada con su pueblo pero profunda en sus vínculos.
+130,6,Bestia,protagonista,2,1,3,2,3,2,4,3,brusco-bloqueado,experiencial-lento,aislado-selectivo,neutro,Muy explosivo y brusco. Aislado por el hechizo. Aprende a relacionarse gracias a Bella.
+131,6,Rex,secundario,3,1,3,3,3,4,2,2,expresivo-ansioso,entusiasta-bloqueado,dependiente-leal,neutro,Muy ansioso y catastrofista. Torpe físicamente. La ansiedad le bloquea aunque tiene mucho entusiasmo.
+132,6,Quasimodo,protagonista,3,3,4,3,4,3,5,3,tímido-expresivo,autodidacta-observacional,aislado-anhelante,hipersensible-auditivo,Autodidacta total. Extraordinariamente ágil en la catedral. Aislado pero con vínculos profundos y selectivos.
+133,6,Hércules,protagonista,3,2,2,3,3,4,1,3,directo-sincero,experiencial-guiado,abierto-generoso,neutro,Dispraxia clara — torpe a pesar de su fuerza. Aprende con guía. Abierto y generoso.
+134,6,Flik,protagonista,4,3,2,3,5,3,3,3,entusiasta-torpe,inventor-experimental,anhelante-aislado,neutro,Inventor autodidacta y creativo. Sus inventos lo aíslan del grupo. Muy entusiasta pero desorganizado.
+135,6,Jane Porter,protagonista,4,4,3,4,5,4,3,4,expresivo-elocuente,investigador-observacional,abierto-empático,neutro,Investigadora nata y observadora. Muy elocuente y empática. Conecta fácil con personas y animales.
+136,6,Kronk,secundario,3,4,3,4,3,5,4,2,literal-simpático,práctico-experiencial,abierto-amigable,neutro,Habla con animales y tiene múltiples intereses variopintos. Muy sociable y positivo. Muy distraído.
+137,6,Milo Thatch,protagonista,5,3,2,3,5,2,2,3,técnico-detallista,investigador-lingüista,introvertido-anhelante,neutro,Obsesionado con la Atlántida. Lingüista brillante. Torpe físicamente y socialmente.
+138,6,Lilo,protagonista,4,1,4,2,4,2,3,2,literal-no convencional,curioso-no convencional,aislado-selectivo,hipersensible-social,Muy explosiva y desregulada. Rechazada por sus iguales. Curiosa e inteligente a su manera no convencional.
+139,6,Dory,protagonista,2,3,3,4,1,5,3,1,espontáneo-sin filtro,intuitivo-inmediato,abierto-total,neutro,Memoria a corto plazo deteriorada. Muy sociable y positiva. Sin planificación posible.
+140,6,Marlin,protagonista,4,2,3,3,3,2,3,3,directo-ansioso,experiencial-resistente,reservado-protector,neutro,Muy ansioso y catastrofista. Protector obsesivo. Aprende a soltar el control a lo largo de la historia.
+141,6,Edna Moda,secundario,5,4,4,5,5,2,3,5,expresivo-dominante,genio-creativo,selectivo-instrumental,hipersensible-estético,Genio creativo y perfeccionista. Extraordinariamente expresiva. Vive para su trabajo.
+142,6,Rayo McQueen,protagonista,4,3,2,3,3,3,5,3,directo-seguro,experiencial-competitivo,egocéntrico-evolutivo,neutro,Competitivo y arrogante al principio. Gran control en pista. Aprende el valor de los vínculos reales.
+143,6,WALL-E,protagonista,4,4,4,2,4,3,4,3,no verbal-gestual,curioso-autodidacta,anhelante-selectivo,hipersensible-táctil,Colecciona objetos por texturas y formas. Se comunica por gestos. Anhela conexión profunda.
+144,6,Russell,secundario,3,3,2,4,3,5,3,3,expresivo-sin filtro,experiencial-entusiasta,abierto-total,neutro,Muy expresivo y hablador. Busca conexión constantemente. Entusiasta y algo desorganizado.
+145,6,Rapunzel,protagonista,4,3,4,4,5,4,4,3,expresivo-entusiasta,autodidacta-creativo,abierto-anhelante,hipersensible-ambiental,Autodidacta total tras años en la torre. Muy sensible al mundo exterior. Ágil con su pelo.
+146,6,Vanellope,protagonista,4,3,3,4,4,3,3,3,sarcástico-directo,intuitivo-rápido,selectivo-leal,neutro,El glitch altera su control corporal. Sarcástica y directa. Aprende rápido e intuitivamente.
+147,6,Elsa,protagonista,3,1,5,2,4,1,4,3,bloqueado-contenido,autodidacta-solitario,aislado-protector,hipersensible-emocional,Sus emociones desencadenan sus poderes. Se aísla para proteger a los demás. Aprende sola a controlarse.
+148,6,Hiro Hamada,protagonista,5,2,2,3,5,3,3,3,directo-técnico,genio-autodidacta,introvertido-leal,neutro,Genio de la robótica. Muy vulnerable emocionalmente tras la pérdida de Tadashi. Brillante y creativo.
+149,6,Tristeza,secundario,3,2,3,3,4,2,2,2,honesto-pesimista,reflexivo-analítico,retraído-anhelante,neutro,Muy reflexiva y analítica. Se siente un estorbo. Lenta y torpe físicamente.
+150,6,Héctor,protagonista,3,3,2,5,3,5,4,2,expresivo-musical,experiencial-intuitivo,abierto-carismático,neutro,Extraordinariamente expresivo y musical. Muy sociable y carismático. Caótico e improvisador.
+151,6,Forky,secundario,4,2,4,3,2,3,2,1,literal-directo,lento-confuso,confuso-selectivo,hipersensible-ambiental,Obsesionado con su identidad como basura. Torpe y desequilibrado. Sin capacidad de planificación.
+152,6,Numero 22,secundario,2,2,5,3,4,2,2,2,sarcástico-directo,curioso-intenso,retraído-selectivo,hipersensible-total,Completamente nueva en un cuerpo físico. El mundo la abruma totalmente. Curiosa una vez se abre.
+153,6,Bruno Madrigal,secundario,4,3,4,3,3,2,3,3,torpe-cálido,observacional-rutinario,aislado-anhelante,hipersensible-ritual,Aislado durante años con sus rituales y ratas. Ansioso y con tics. Cálido cuando confía.
+154,6,Giulia,secundario,4,3,2,5,4,5,3,4,expresivo-entusiasta,estudioso-curioso,abierto-generoso,neutro,Muy expresiva y habladora. Estudiosa y curiosa. Conecta de forma inmediata con Luca y Alberto.
+155,6,Candela Lumen,protagonista,3,3,4,3,4,3,4,3,directo-contenido,curioso-descubridor,reservado-leal,hipersensible-elemental,Se inflama cuando pierde el control. Convierte el agua en cristal. Gran conciencia de su cuerpo elemental.
+156,6,Nilo Fuentes,secundario,2,2,4,4,3,5,3,3,expresivo-empático,experiencial-emocional,abierto-afectuoso,hipersensible-emocional,Llora constantemente y con intensidad. Muy empático y afectuoso. Sociable y abierto con todos.
+157,6,Ansiedad,secundario,5,1,4,4,3,3,3,2,expresivo-alarmista,preventivo-anticipatorio,controlador-protector,hipersensible-alerta,Anticipa todos los peligros posibles. Completamente desregulada por naturaleza. Paraliza más que organiza.
+158,6,Elio,protagonista,5,3,3,3,5,2,3,3,técnico-entusiasta,autodidacta-espacial,introvertido-anhelante,neutro,Obsesionado con el espacio y los extraterrestres. Autodidacta total. Introvertido y torpe socialmente.
+159,6,Merida,protagonista,3,2,3,3,4,3,5,2,directo-sin filtro,autodidacta-práctico,reservado-leal,neutro,Arquera excepcional. Muy impulsiva y directa. Actúa sin pensar las consecuencias.
+160,6,Megara,secundario,2,3,2,5,4,2,3,3,sarcástico-expresivo,observacional-inteligente,reservado-desconfiado,neutro,Extraordinariamente sarcástica y expresiva. Desconfía de todo el mundo. Inteligente y observadora.
+161,6,Cenicienta,protagonista,2,5,2,4,3,4,3,4,amable-elegante,experiencial-adaptativo,abierto-empático,neutro,Extraordinariamente calmada y positiva. Muy organizada. Conecta fácil con personas y animales.
+162,6,Tiana,protagonista,4,4,2,4,4,3,4,5,directo-firme,metódico-trabajador,reservado-selectivo,neutro,Trabajadora y disciplinada. Muy organizada y planificadora. Prioriza el trabajo sobre las relaciones.
+163,6,Kida,protagonista,4,4,3,4,5,4,5,4,directo-políglota,políglota-curioso,abierto-decidido,neutro,Políglota y curiosa. Guerrera ágil y precisa. Conecta fácil y actúa con determinación.
+164,6,Esmeralda,protagonista,3,4,3,5,3,5,5,3,expresivo-carismático,experiencial-intuitivo,abierto-empático,neutro,Extraordinariamente expresiva y carismática. Bailarina y acróbata excepcional. Empática con los marginados.
+165,6,Mirabel,protagonista,3,3,2,4,4,5,3,3,expresivo-empático,observacional-empático,abierto-integrador,neutro,El pegamento emocional de la familia. Muy empática y observadora. Determinada aunque impulsiva.
+166,6,Aladdin,protagonista,3,3,2,4,3,5,5,3,carismático-expresivo,experiencial-adaptativo,abierto-generoso,neutro,Muy carismático y ágil. Conecta fácil con todos. Ingenioso e improvisador bajo presión.
+167,6,Li Shang,secundario,3,4,2,3,4,3,5,5,autoritario-directo,metódico-riguroso,reservado-justo,neutro,Guerrero excepcional y líder riguroso. Muy organizado y planificador. Reservado pero justo.
+168,6,Príncipe Eric,secundario,2,4,3,4,3,4,4,3,amable-directo,experiencial-aventurero,abierto-generoso,neutro,Marinero hábil y coordinado. Amable y generoso. Algo impulsivo en lo personal.
+169,6,Flynn Rider,protagonista,3,4,2,5,4,4,4,3,carismático-sarcástico,adaptativo-oportunista,carismático-evolutivo,neutro,Extraordinariamente carismático. Muy ágil e ingenioso. Evoluciona de egoísta a leal.
+170,6,Kristoff,secundario,2,4,3,3,3,2,4,3,brusco-directo,experiencial-físico,reservado-selectivo,neutro,Prefiere la compañía de Sven a la de personas. Muy trabajador y físicamente hábil.
+171,6,Gary,protagonista,5,3,3,3,4,3,3,3,técnico-tímido,autodidacta-curioso,introvertido-leal,neutro,Obsesionado con el espacio. Autodidacta y curioso. Introvertido pero forma vínculos profundos.
 
