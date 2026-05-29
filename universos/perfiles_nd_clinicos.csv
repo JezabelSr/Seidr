@@ -1,0 +1,21 @@
+nd_id,nombre,hiperfoco_min,hiperfoco_max,reg_emocional_min,reg_emocional_max,sensorialidad_min,sensorialidad_max,comunicacion_min,comunicacion_max,aprendizaje_min,aprendizaje_max,sociabilidad_min,sociabilidad_max,propiocepcion_min,propiocepcion_max,f_ejecutiva_min,f_ejecutiva_max,fuente,hiperfoco_medio,reg_emocional_medio,sensorialidad_medio,comunicacion_medio,aprendizaje_medio,sociabilidad_medio,propiocepcion_medio,f_ejecutiva_medio
+1,Dislexia,1,2,2,4,1,3,2,3,1,2,2,4,2,4,2,4,DAST/DSM-5,1.5,3.0,2.0,2.5,1.5,3.0,3.0,3.0
+2,TDAH,3,5,1,3,2,4,2,4,2,4,3,5,2,4,1,2,BAARS-IV/DSM-5,4.0,2.0,3.0,3.0,3.0,4.0,3.0,1.5
+3,TEA,3,5,1,3,3,5,1,3,2,4,1,3,2,4,2,4,AQ/DSM-5,4.0,2.0,4.0,2.0,3.0,2.0,3.0,3.0
+4,AACC,4,5,2,4,2,4,3,5,4,5,2,4,2,4,3,5,DSM-5/WISC,4.5,3.0,3.0,4.0,4.5,3.0,3.0,4.0
+5,Discalculia,1,2,2,4,1,2,3,4,1,2,2,4,2,4,2,4,DSM-5,1.5,3.0,1.5,3.5,1.5,3.0,3.0,3.0
+6,Dispraxia/TDC,1,2,2,3,2,4,2,4,2,4,2,4,1,2,2,3,MABC-2/DSM-5,1.5,2.5,3.0,3.0,3.0,3.0,1.5,2.5
+7,Disgrafía,1,2,2,4,1,2,1,3,2,4,2,4,1,3,2,4,DSM-5/BHK,1.5,3.0,1.5,2.0,3.0,3.0,2.0,3.0
+8,Síndrome de Tourette,2,3,1,3,3,5,2,4,2,4,2,3,2,4,2,3,DSM-5/YGTSS,2.5,2.0,4.0,3.0,3.0,2.5,3.0,2.5
+9,TEL,1,2,2,4,2,3,1,3,2,4,2,4,2,4,2,4,DSM-5/CELF,1.5,3.0,2.5,2.0,3.0,3.0,3.0,3.0
+10,SPD,1,2,2,4,4,5,2,4,2,4,2,4,2,4,2,4,SPM/DSM-5,1.5,3.0,4.5,3.0,3.0,3.0,3.0,3.0
+11,Tartamudez,1,2,1,3,1,3,1,3,2,4,1,3,2,4,2,4,DSM-5/SSI-4,1.5,2.0,2.0,2.0,3.0,2.0,3.0,3.0
+12,Discapacidad Intelectual,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,DSM-5/WISC,2.0,2.0,2.0,2.0,2.0,2.0,2.0,2.0
+13,TOC,4,5,2,4,3,5,2,4,2,4,1,3,2,4,3,5,DSM-5/OCI-R,4.5,3.0,4.0,3.0,3.0,2.0,3.0,4.0
+14,Mutismo Selectivo,1,2,1,2,3,5,1,2,2,4,1,2,2,4,2,4,DSM-5/SMAQ,1.5,1.5,4.0,1.5,3.0,1.5,3.0,3.0
+15,Síndrome de Irlen,1,2,2,4,4,5,2,4,1,2,2,4,2,4,2,4,DSM-5/IES,1.5,3.0,4.5,3.0,1.5,3.0,3.0,3.0
+16,Trastorno Fonológico,1,2,2,4,1,2,1,3,2,4,2,4,2,4,2,4,DSM-5 315.39,1.5,3.0,1.5,2.0,3.0,3.0,3.0,3.0
+17,Trastorno de Comunicación Social,1,2,2,4,2,3,1,3,2,4,1,3,2,4,2,4,DSM-5 315.39,1.5,3.0,2.5,2.0,3.0,2.0,3.0,3.0
+18,Trastorno por Movimientos Estereotipados,2,4,2,4,2,4,2,4,2,4,2,4,1,2,1,2,DSM-5 307.3,3.0,3.0,3.0,3.0,3.0,3.0,1.5,1.5
+19,Trastorno de Ansiedad Social,1,2,1,3,2,4,1,3,2,4,2,3,2,4,2,4,DSM-5 300.23,1.5,2.0,3.0,2.0,3.0,2.5,3.0,3.0
+20,TANV,1,2,2,4,2,3,1,3,1,3,1,3,1,3,1,3,ICD-11,1.5,3.0,2.5,2.0,2.0,2.0,2.0,2.0
