@@ -1,0 +1,7 @@
+universo_id,nombre,tono,audiencia,paleta_css,activo,copyright
+1,Harry Potter,mágico,todos,"#740001,#ae0001,#eeba30,#000000",True,© Warner Bros. Entertainment / J.K. Rowling. Imágenes usadas con fines educativos no comerciales.
+2,La Brújula Dorada,aventura,todos,"#c9a84c,#1a3a5c,#e8e0d0,#0d0d12",True,© New Line Cinema / Philip Pullman. Imágenes usadas con fines educativos no comerciales.
+3,Pokémon,aventura,todos,"#ffcb05,#3d7dca,#cc0000,#ffffff",True,© Nintendo / Game Freak / The Pokémon Company. Imágenes usadas con fines educativos no comerciales.
+4,Studio Ghibli,contemplativo,todos,"#5a8a5a,#c9a84c,#e8e0d0,#2a2a3a",True,© Studio Ghibli. Imágenes usadas con fines educativos no comerciales.
+5,Cómo entrenar a tu dragón,épico,todos,"#1a1a2e,#c9a84c,#4a7fa5,#e8e0d0",True,© DreamWorks Animation. Imágenes usadas con fines educativos no comerciales.
+6,Disney/Pixar,mágico,todos,"#003087,#c9a84c,#ffffff,#e8112d",True,© The Walt Disney Company / Pixar Animation Studios. Imágenes usadas con fines educativos no comerciales.
