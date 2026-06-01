@@ -6,6 +6,11 @@ App principal de Streamlit — Estructura base v1.0
 import streamlit as st
 import base64
 from pathlib import Path
+import sys
+sys.path.insert(0, "hechizos")
+from test_universo import pagina_test_universo
+from modulo_1 import pagina_modulo_1
+from modulo_2 import pagina_modulo_2
 
 # ─────────────────────────────────────────────
 # CONFIGURACIÓN DE PÁGINA (debe ser lo primero)
@@ -16,6 +21,21 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Forzar sidebar visible siempre mediante CSS
+st.markdown("""
+<style>
+[data-testid="collapsedControl"] {
+    display: flex !important;
+    visibility: visible !important;
+}
+section[data-testid="stSidebar"][aria-expanded="false"] {
+    margin-left: 0 !important;
+    min-width: 250px !important;
+    width: 250px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 # TEXTURA — cargar PNG como base64
@@ -372,11 +392,11 @@ pagina_id = MODULOS[pagina_actual]
 if pagina_id == "inicio":
     pagina_inicio()
 elif pagina_id == "test_universo":
-    pagina_en_construccion("ᚦ Test de universo", "Elige tu universo de ficción. Será el lenguaje de tu viaje.")
+    pagina_test_universo()
 elif pagina_id == "modulo_1":
-    pagina_en_construccion("ᚨ Módulo 1 · Tu perfil", "24 preguntas → perfil de 8 dimensiones + personaje.")
+    pagina_modulo_1()
 elif pagina_id == "modulo_2":
-    pagina_en_construccion("ᚢ Módulo 2 · Tu criatura de asistencia", "La criatura que mejor encaja con tu perfil y su equivalente en razas reales.")
+    pagina_modulo_2()
 elif pagina_id == "modulo_3":
     pagina_en_construccion("ᚲ Módulo 3 · Tu forma de comunicarte", "Recursos de logopedia, CAA y comunicación aumentativa.")
 elif pagina_id == "modulo_4":

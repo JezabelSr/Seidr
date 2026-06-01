@@ -1,0 +1,51 @@
+recurso_id,nombre,tipo,descripcion,edad,gratuito,url,fuente,modulo,neurodivergencias
+1,AELFA-IF,asociacion,Asociación Española de Logopedia — directorio de profesionales y recursos.,ambos,True,https://aelfa.org,AELFA,3,"Tartamudez,Mutismo Selectivo,Dislexia"
+2,ISAAC España,asociacion,Comunicación aumentativa y alternativa — recursos y formación.,ambos,True,https://isaac.es,ISAAC,3,"TEA,Mutismo Selectivo"
+3,Portal Aragonés de CAA (ARASAAC),herramienta,"Recursos gratuitos de comunicación aumentativa y alternativa. Pictogramas, tableros y herramientas.",ambos,True,https://arasaac.org,Gobierno de Aragón,3,"TEA,Mutismo Selectivo"
+4,Picto Selector,herramienta,Software gratuito para crear tableros de comunicación con pictogramas.,ambos,True,https://www.pictoselector.eu,ARASAAC,3,"TEA,Mutismo Selectivo"
+5,LetMe Talk,herramienta,App de CAA gratuita para Android con pictogramas ARASAAC.,ambos,True,https://letmetalk.info,Open Source,3,"TEA,Mutismo Selectivo"
+6,Proloquo2Go,herramienta,App de CAA premium para iOS — muy usada en España.,ambos,False,https://www.assistiveware.com/products/proloquo2go,AssistiveWare,3,"TEA,Mutismo Selectivo"
+7,Fundación CNSE,asociacion,Confederación Estatal de Personas Sordas — recursos de comunicación y lengua de signos.,ambos,True,https://www.cnse.es,CNSE,3,Tartamudez
+8,Asociación Mutismo Selectivo España,asociacion,Recursos y orientación para mutismo selectivo en España.,infantil,True,https://mutismoselectivo.com,Asociación MS España,3,Mutismo Selectivo
+9,European Clinical Specialisation Fluency,asociacion,Especialización europea en disfluencias del habla — tartamudez.,ambos,True,https://www.ecsf.eu,ECSF,3,Tartamudez
+10,ASHA,asociacion,Asociación americana de logopedia y audiología. Recursos internacionales verificados.,ambos,True,https://www.asha.org,ASHA,3,"Tartamudez,Dislexia,Mutismo Selectivo"
+11,CADAH — Técnicas de estudio TDAH,herramienta,Guías de técnicas de estudio adaptadas para TDAH.,ambos,True,https://www.fundacioncadah.org/web/categoria/tecnicas-de-estudio.html,CADAH,4,TDAH
+12,Asociación Dislexia y Familia (DISFAM),asociacion,Recursos y adaptaciones para dislexia en el aula.,infantil,True,https://www.disfam.org,DISFAM,4,"Dislexia,Discalculia"
+13,International Dyslexia Association,asociacion,Recursos internacionales para dislexia y dificultades de aprendizaje.,ambos,True,https://dyslexiaida.org,IDA,4,"Dislexia,Discalculia"
+14,Ministerio de Educación — AACC,herramienta,Guía oficial de altas capacidades en el sistema educativo español.,infantil,True,https://www.educacionyfp.gob.es,Ministerio Educación,4,AACC
+15,AEST — Altas Capacidades,asociacion,Asociación Española de Superdotación y Talento.,ambos,True,https://aest.es,AEST,4,AACC
+16,Understood.org,herramienta,Recursos para dificultades de aprendizaje y atención (en inglés).,infantil,True,https://www.understood.org,Understood,4,"TDAH,Dislexia,Discalculia,Dispraxia/TDC"
+17,Dyspraxia Foundation,asociacion,Recursos internacionales para dispraxia/TDC.,ambos,True,https://dyspraxiafoundation.org.uk,Dyspraxia Foundation,4,Dispraxia/TDC
+18,Plena Inclusión España,asociacion,Recursos para discapacidad intelectual en educación.,ambos,True,https://www.plenainclusion.org,Plena Inclusión,4,Discapacidad Intelectual
+19,Goblin Tools,herramienta,Herramienta online gratuita que descompone tareas en pasos pequeños con IA. Ideal para dificultades de función ejecutiva.,adulto,True,https://goblin.tools,Goblin Tools,4,"TDAH,TEA,Discapacidad Intelectual"
+20,Autismo España — directorio,asociacion,Directorio de asociaciones de autismo por comunidad autónoma.,ambos,True,https://autismo.org.es/nosotros/entidades-miembro,Autismo España,5,TEA
+21,FEAADAH,asociacion,Federación de asociaciones de TDAH en España.,ambos,True,https://www.feaadah.org,FEAADAH,5,TDAH
+22,RedTDAH,asociacion,Red española de asociaciones de TDAH.,ambos,True,https://www.redtdah.org,RedTDAH,5,TDAH
+23,ACTOC,asociacion,Asociación de TOC en España — grupos de apoyo y orientación.,ambos,True,https://www.actoc.es,ACTOC,5,TOC
+24,Acovastta,asociacion,Asociación Valenciana de Tourette.,ambos,True,https://acovastta.org,Acovastta,5,Síndrome de Tourette
+25,Selective Mutism Association,asociacion,Comunidad internacional para mutismo selectivo.,ambos,True,https://www.selectivemutism.org,SMA,5,Mutismo Selectivo
+26,Comunidades Discord neurodivergentes,herramienta,Servidor de Discord para neurodivergentes hispanohablantes.,ambos,True,https://discord.gg/neurodivergentes,Comunidad,5,"TEA,TDAH,AACC"
+27,Reddit r/neurodivergentes,herramienta,Comunidad hispanohablante de neurodivergentes en Reddit.,adulto,True,https://www.reddit.com/r/neurodivergentes,Reddit,5,"TEA,TDAH,AACC"
+28,APETO,asociacion,Asociación Española de Terapia Ocupacional — directorio de profesionales.,ambos,True,https://apeto.com,APETO,6,"SPD,TEA,Dispraxia/TDC,TDAH"
+29,STAR Institute,herramienta,Instituto de referencia internacional para procesamiento sensorial.,ambos,True,https://sensoryhealth.org,STAR Institute,6,"SPD,TEA"
+30,Guía autorregulación sensorial TEA,herramienta,Guía práctica de autorregulación sensorial para TEA de Autismo España.,ambos,True,https://autismo.org.es/biblioteca,Autismo España,6,"TEA,SPD"
+31,Técnicas de regulación sensorial CADAH,herramienta,Guía de técnicas de regulación sensorial para TDAH.,ambos,True,https://www.fundacioncadah.org,CADAH,6,"TDAH,SPD"
+32,Sensory Processing Questionnaire,test,Test de cribado de procesamiento sensorial del STAR Institute.,ambos,True,https://sensoryhealth.org,STAR Institute,6,"SPD,TEA"
+33,Técnica de respiración 4-7-8,tecnica,"Inhala 4 segundos, retén 7, exhala 8. Útil en momentos de sobrecarga sensorial o emocional.",ambos,True,https://www.healthline.com/health/4-7-8-breathing,Healthline,6,"SPD,TEA,TDAH,Trastorno de Ansiedad Social"
+34,Manta con peso,recurso_material,Las mantas con peso proporcionan estimulación propioceptiva profunda que ayuda a regular el sistema nervioso.,ambos,False,https://www.understood.org/articles/weighted-blankets-what-you-need-to-know,Understood,6,"SPD,TEA,TDAH"
+35,RAADS-R,test,Escala de rasgos TEA en adultos — muy completo. 80 preguntas.,adulto,True,https://embrace-autism.com/raads-r,Embrace Autism,7,TEA
+36,AQ-10,test,Cribado rápido de rasgos autistas. 10 preguntas.,adulto,True,https://embrace-autism.com/aq-10,Embrace Autism,7,TEA
+37,CAT-Q,test,Camuflaje de rasgos autistas — especialmente relevante en mujeres y personas AFAB.,adulto,True,https://embrace-autism.com/cat-q,Embrace Autism,7,TEA
+38,Aspie Quiz,test,Test amplio de rasgos TEA con perfil visual detallado.,adulto,True,https://embrace-autism.com/aspie-quiz,Embrace Autism,7,TEA
+39,Toronto Alexithymia Scale,test,Evalúa alexitimia — dificultad para identificar y describir emociones. Muy relevante en TEA y TDAH.,adulto,True,https://embrace-autism.com/toronto-alexithymia-scale/#test,Embrace Autism,7,"TEA,TDAH"
+40,ASRS-v1.1,test,Escala oficial de TDAH en adultos validada por la OMS. 18 preguntas.,adulto,True,https://www.hcp.med.harvard.edu/ncs/asrs.php,Harvard/OMS,7,TDAH
+41,DIVA 2.0,test,Entrevista diagnóstica de TDAH en adultos — se usa con profesional.,adulto,True,https://www.divacenter.eu/es,DIVA Center,7,TDAH
+42,Test screening AACC,test,Test orientativo gratuito de altas capacidades para adultos.,adulto,True,https://defrentealasuperdotacion.com/test-gratis-altas-capacidades/realizar-test,De Frente a la Superdotación,7,AACC
+43,Test de Bangor,test,Cribado de dislexia para adultos.,adulto,True,https://www.bdadyslexia.org.uk,BDA,7,Dislexia
+44,OCI-R,test,Obsessive Compulsive Inventory — cribado de TOC.,adulto,True,https://iocdf.org,IOCDF,7,TOC
+45,Test neurodivergencia general,test,Test orientativo general de neurodivergencia en español.,adulto,True,https://neuro-divergentes.com/test-para-neurodivergencias-en-adultos,Neuro Divergentes,7,"TEA,TDAH,AACC"
+46,Colegio Oficial de Psicólogos,asociacion,Directorio oficial de psicólogos colegiados por comunidad autónoma.,ambos,True,https://www.cop.es,COP España,7,"TEA,TDAH,AACC,TOC,Dislexia,SPD,Trastorno de Ansiedad Social,Discapacidad Intelectual,Mutismo Selectivo,Tartamudez,TANV,Discalculia,Dispraxia/TDC,Síndrome de Tourette"
+47,CIE-11 (OMS),herramienta,Clasificación Internacional de Enfermedades de la OMS. Referencia clínica gratuita online.,ambos,True,https://icd.who.int/es,OMS,7,"TEA,TDAH,AACC,TOC,Dislexia,SPD,Trastorno de Ansiedad Social,Discapacidad Intelectual,Mutismo Selectivo,Tartamudez,TANV,Discalculia,Dispraxia/TDC,Síndrome de Tourette"
+48,CADAH — Fundación TDAH,asociacion,"Fundación especializada en TDAH. Tests de cribado, información clínica y directorio de profesionales.",ambos,True,https://www.fundacioncadah.org,CADAH,7,TDAH
+49,Confederación Salud Mental España,asociacion,Red de asociaciones de salud mental en España. Orientación y directorio de recursos por CCAA.,ambos,True,https://consaludmental.org,Salud Mental España,7,"TEA,TDAH,TOC,Trastorno de Ansiedad Social,Mutismo Selectivo"
+50,Burnout autista (test),test,Evalúa el agotamiento específico del burnout autista.,adulto,True,https://embrace-autism.com/autistic-burnout,Embrace Autism,7,TEA
