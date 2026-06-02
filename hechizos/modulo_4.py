@@ -1,0 +1,73 @@
+"""SEIÐR — Módulo 4: Tu forma de aprender"""
+
+import streamlit as st
+from modulo_3 import (
+    cargar_contenido, cargar_recursos, obtener_contenido_nd,
+    filtrar_recursos_nd, _normalizar_nds,
+    _cabecera_modulo, _bloque_explicacion, _bloque_lista,
+    _bloque_recursos, _aviso_nt, _nota_pie
+)
+
+
+def mostrar_modulo_4(orientacion_nd=None):
+    nds = _normalizar_nds(orientacion_nd)
+
+    _cabecera_modulo("ᚷ", "Tu forma de aprender", "Módulo 4 · Aprendizaje y Función Ejecutiva")
+    # ── Narrador contextual ──
+    try:
+        from narrador import get_narrador
+        _universo_id = st.session_state.get("universo_elegido")
+        _texto_narrador = get_narrador(_universo_id, "modulo_recursos")
+        if _texto_narrador:
+            st.markdown(
+                f"<div style='background:rgba(201,168,76,0.06);border-left:3px solid #c9a84c;"
+                f"border-radius:0 8px 8px 0;padding:1rem 1.5rem;margin:0 0 1.5rem;'>"
+                f"<p style='color:#c9a84c;font-size:0.9rem;font-style:italic;margin:0;"
+                f"line-height:1.7;'>{_texto_narrador}</p></div>",
+                unsafe_allow_html=True
+            )
+    except Exception:
+        pass
+
+
+    df_contenido = cargar_contenido()
+    df_recursos  = cargar_recursos()
+
+    if not nds:
+        _aviso_nt()
+        _bloque_recursos(filtrar_recursos_nd(df_recursos, 4, []))
+        _nota_pie()
+        return
+
+    for nd in nds:
+        if len(nds) > 1:
+            st.markdown(
+                f"<h3 style='font-family:\"Cinzel\",serif; color:#c9a84c;"
+                f"font-size:1rem; margin:1.5rem 0 0.8rem;'>◈ {nd}</h3>",
+                unsafe_allow_html=True
+            )
+
+        contenido = obtener_contenido_nd(df_contenido, nd, modulo=4)
+        if contenido:
+            st.markdown(
+                "<p style='font-family:\"Cinzel\",serif; color:#9a9080;"
+                "font-size:0.8rem; letter-spacing:0.05em; margin-bottom:0.5rem;'>"
+                "ASÍ FUNCIONA TU APRENDIZAJE</p>",
+                unsafe_allow_html=True
+            )
+            _bloque_explicacion(contenido["explicacion"])
+
+            if contenido["tecnicas"]:
+                _bloque_lista("Qué puedes hacer", "✦", contenido["tecnicas"])
+
+            if contenido["adaptaciones"]:
+                _bloque_lista("Qué puedes pedir en el aula o trabajo", "◈", contenido["adaptaciones"], color_borde="#4a7fa5")
+        else:
+            st.info(f"Contenido para {nd} no disponible aún.")
+
+    df_rec_filtrado = filtrar_recursos_nd(df_recursos, 4, nds)
+    if not df_rec_filtrado.empty:
+        st.markdown("<hr style='border-color:#2a2a3a; margin:1.5rem 0;'>", unsafe_allow_html=True)
+        _bloque_recursos(df_rec_filtrado)
+
+    _nota_pie()

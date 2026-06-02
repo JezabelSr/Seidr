@@ -44,8 +44,15 @@ NOMBRES_UNIVERSOS = {
 }
 
 
-@st.cache_data
 def cargar_preguntas():
+    try:
+        from db import cargar_preguntas as _db_preguntas
+        df = _db_preguntas(universo_id=0)
+        if not df.empty:
+            return df.reset_index(drop=True)
+        raise Exception("BD vacía")
+    except Exception:
+        pass
     try:
         df = pd.read_csv("universos/preguntas.csv", engine="python")
         return df[df["universo_id"] == 0].reset_index(drop=True)
@@ -274,11 +281,25 @@ def pagina_test_universo():
             f"Ahora descubriremos qué personaje se parece más a ti.</p></div>",
             unsafe_allow_html=True
         )
-        st.markdown(
-            "<div style='background:#1a1a28;border-left:3px solid #c9a84c;"
-            "padding:1rem 1.5rem;border-radius:0 4px 4px 0;margin-top:1.5rem;text-align:center'>"
-            "<p style='color:#9a9080;font-size:0.9rem;margin:0'>"
-            "← Selecciona <strong style='color:#c9a84c'>ᚨ Módulo 1 · Tu perfil</strong> "
-            "en el menú lateral para continuar</p></div>",
-            unsafe_allow_html=True
-        )
+
+        # ── Narrador contextual ──
+        try:
+            from narrador import get_narrador
+            universo_id = st.session_state.get("universo_elegido")
+            texto_narrador = get_narrador(universo_id, "universo_elegido")
+            if texto_narrador:
+                st.markdown(
+                    f"<div style='background:rgba(201,168,76,0.06);border-left:3px solid #c9a84c;"
+                    f"border-radius:0 8px 8px 0;padding:1rem 1.5rem;margin:1rem 0 1.5rem;"
+                    f"text-align:center;'>"
+                    f"<p style='color:#c9a84c;font-size:0.9rem;font-style:italic;margin:0;"
+                    f"line-height:1.7;'>{texto_narrador}</p></div>",
+                    unsafe_allow_html=True
+                )
+        except Exception:
+            pass
+        col_btn = st.columns([1, 2, 1])[1]
+        with col_btn:
+            if st.button("ᚨ Continuar a Tu perfil →", use_container_width=True, key="btn_tu_completado"):
+                st.session_state["_pagina_activa"] = "ᚨ  Tu perfil"
+                st.rerun()
