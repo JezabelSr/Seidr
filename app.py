@@ -58,7 +58,7 @@ except ImportError:
 
 st.set_page_config(
     page_title="Seiðr",
-    page_icon="ᚱ",
+    page_icon="iconografia/favicon_seidr.png",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -390,6 +390,7 @@ def _navegar_a(pagina_key: str):
 
 
 def pagina_inicio():
+    # ── Banner ──
     if img_portada:
         st.markdown(
             f'<div class="portada-box">'
@@ -398,35 +399,33 @@ def pagina_inicio():
             unsafe_allow_html=True
         )
 
-    st.markdown("""
-    <div class="seidr-info">
-    Seiðr no es una herramienta de diagnóstico. Es un punto de partida:
-    usa universos de ficción como puerta de entrada a información clínica
-    rigurosa sobre neurodivergencia. La ficción es el vehículo, nunca el contenido.
-    </div>
-    """, unsafe_allow_html=True)
+    # ── Texto Seiðr ──
+    _html_texto = (
+        "<div style='max-width:720px;margin:2rem auto 2.5rem;text-align:center;padding:0 1rem;'>"
+        "<p style='font-family:Cinzel,serif;color:#c9a84c;font-size:0.85rem;"
+        "letter-spacing:0.2em;margin-bottom:1rem;'>"
+        "ᚱ SEIÐR &nbsp;·&nbsp; <em style='font-family:Crimson Pro,serif;font-style:italic;'>"
+        "pronunciado &#34;say-thr&#34;</em></p>"
+        "<p style='color:#e8e0d0;font-size:1.05rem;line-height:1.85;margin-bottom:1.2rem;'>"
+        "En la tradición nórdica, el <strong style='color:#c9a84c;'>seiðr</strong> "
+        "era la magia de los videntes: el arte de leer los hilos invisibles del destino "
+        "y encontrar el camino propio.</p>"
+        "<p style='color:#9a9080;font-size:0.95rem;line-height:1.8;margin-bottom:1.2rem;'>"
+        "Esta app usa universos de ficción como puerta de entrada a información clínica "
+        "rigurosa sobre neurodivergencia. Elige tu saga favorita, descubre qué personaje "
+        "se parece a ti, y encuentra recursos reales adaptados a cómo funciona tu mente.</p>"
+        "<p style='font-family:Crimson Pro,serif;color:#c9a84c;font-size:1rem;"
+        "font-style:italic;letter-spacing:0.05em;'>"
+        "La ficción es el vehículo. El conocimiento, el destino.</p>"
+        "</div>"
+    )
+    st.markdown(_html_texto, unsafe_allow_html=True)
 
-    st.markdown("### ¿Cómo funciona?")
-
-    modulos_info = [
-        ("ᚦ", "Test de universo", "Elige tu universo de ficción favorito. Será el lenguaje de todo lo que viene.", "test_universo"),
-        ("ᚨ", "Tu perfil", "Responde 24 preguntas y obtén tu perfil de 8 dimensiones y tu personaje.", "modulo_1"),
-        ("ᚢ", "Tu criatura", "Se te asigna una criatura de asistencia y su equivalente en razas reales.", "modulo_2"),
-        ("ᚲ", "Módulos 3-7", "Recursos reales organizados por dimensión: comunicación, aprendizaje, sociabilidad, cuerpo y orientación clínica.", "modulo_3"),
-    ]
-
-    col1, col2 = st.columns(2)
-    for i, (icono, titulo, desc, destino) in enumerate(modulos_info):
-        col = col1 if i % 2 == 0 else col2
-        with col:
-            st.markdown(f"""
-            <div class="seidr-card">
-                <h4>{icono} {titulo}</h4>
-                <p>{desc}</p>
-            </div>
-            """, unsafe_allow_html=True)
-            if st.button(f"Ir a {titulo}", key=f"btn_inicio_{destino}", use_container_width=True):
-                _navegar_a(destino)
+    # ── Botón único ──
+    col = st.columns([1, 3, 1])[1]
+    with col:
+        if st.button("ᚦ  Comienza tu aventura", use_container_width=True, key="btn_inicio_aventura"):
+            _navegar_a("test_universo")
 
 
 def pagina_en_construccion(nombre: str, descripcion: str = ""):
