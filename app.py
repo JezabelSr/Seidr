@@ -336,10 +336,9 @@ with st.sidebar:
     pagina_actual = st.radio(
         label="Navegación",
         options=opciones,
-        index=opciones.index(st.session_state["_pagina_activa"]),
+        index=opciones.index(st.session_state.get("_pagina_activa", opciones[0])),
         label_visibility="collapsed",
     )
-    # Siempre sincronizar — el radio es la fuente de verdad
     st.session_state["_pagina_activa"] = pagina_actual
 
     st.markdown("---")
@@ -385,7 +384,7 @@ def _navegar_a(pagina_key: str):
     for etiqueta, key in MODULOS.items():
         if key == pagina_key:
             st.session_state["_pagina_activa"] = etiqueta
-            # Actualizar también la key del widget radio directamente
+            st.session_state["_navegar_desde_boton"] = True
             st.rerun()
 
 
@@ -449,9 +448,21 @@ if "pagina_anterior" not in st.session_state:
 
 if st.session_state["pagina_anterior"] != pagina_actual:
     st.session_state["pagina_anterior"] = pagina_actual
-    # Scroll al top via componente HTML — el JS inline no funciona en Streamlit
+    # Scroll al top — probamos múltiples selectores para compatibilidad
     components.html(
-        "<script>window.parent.document.querySelector('section.main').scrollTo(0, 0);</script>",
+        """<script>
+        var selectors = [
+            'section.main',
+            '[data-testid="stMain"]',
+            '.main',
+            'div.block-container',
+        ];
+        for (var s of selectors) {
+            var el = window.parent.document.querySelector(s);
+            if (el) { el.scrollTop = 0; break; }
+        }
+        window.parent.scrollTo(0, 0);
+        </script>""",
         height=0
     )
 

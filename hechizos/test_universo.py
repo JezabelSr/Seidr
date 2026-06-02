@@ -44,15 +44,8 @@ NOMBRES_UNIVERSOS = {
 }
 
 
+@st.cache_data
 def cargar_preguntas():
-    try:
-        from db import cargar_preguntas as _db_preguntas
-        df = _db_preguntas(universo_id=0)
-        if not df.empty:
-            return df.reset_index(drop=True)
-        raise Exception("BD vacía")
-    except Exception:
-        pass
     try:
         df = pd.read_csv("universos/preguntas.csv", engine="python")
         return df[df["universo_id"] == 0].reset_index(drop=True)
@@ -281,8 +274,7 @@ def pagina_test_universo():
             f"Ahora descubriremos qué personaje se parece más a ti.</p></div>",
             unsafe_allow_html=True
         )
-
-        # ── Narrador contextual ──
+        # Narrador
         try:
             from narrador import get_narrador
             universo_id = st.session_state.get("universo_elegido")
@@ -298,6 +290,7 @@ def pagina_test_universo():
                 )
         except Exception:
             pass
+
         col_btn = st.columns([1, 2, 1])[1]
         with col_btn:
             if st.button("ᚨ Continuar a Tu perfil →", use_container_width=True, key="btn_tu_completado"):
