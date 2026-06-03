@@ -78,6 +78,29 @@ def _breed_a_archivo(breed: str) -> str | None:
     return None
 
 
+# ── Limpieza de texto para compatibilidad latin-1 ───────────────────────────
+def _limpiar(texto: str) -> str:
+    """Sustituye caracteres Unicode no soportados por Helvetica."""
+    if not texto:
+        return ""
+    return (str(texto)
+        .replace("—", "-").replace("–", "-")
+        .replace("‘", "'").replace("’", "'")
+        .replace("“", '"').replace("”", '"')
+        .replace("á", "a").replace("é", "e")
+        .replace("í", "i").replace("ó", "o")
+        .replace("ú", "u").replace("ñ", "n")
+        .replace("Á", "A").replace("É", "E")
+        .replace("Í", "I").replace("Ó", "O")
+        .replace("Ú", "U").replace("Ñ", "N")
+        .replace("ü", "u").replace("à", "a")
+        .replace("è", "e").replace("ò", "o")
+        .replace("ù", "u").replace("ì", "i")
+        .replace("¿", "?").replace("¡", "!")
+        .replace("·", "*").replace("…", "...")
+    )
+
+
 # ── Clase PDF base ────────────────────────────────────────────────────────────
 
 class SeidrPDF(FPDF):
@@ -123,22 +146,22 @@ class SeidrPDF(FPDF):
     def cuerpo(self, texto: str):
         self.set_font("Helvetica", "", 10)
         self.set_text_color(*BLANCO)
-        self.multi_cell(0, 6, texto)
+        self.multi_cell(0, 6, _limpiar(texto))
         self.ln(2)
 
     def cuerpo_gris(self, texto: str):
         self.set_font("Helvetica", "I", 9)
         self.set_text_color(*GRIS)
-        self.multi_cell(0, 5, texto)
+        self.multi_cell(0, 5, _limpiar(texto))
         self.ln(1)
 
     def etiqueta_valor(self, etiqueta: str, valor: str):
         self.set_font("Helvetica", "B", 10)
         self.set_text_color(*DORADO)
-        self.cell(55, 6, etiqueta + ":", ln=False)
+        self.cell(55, 6, _limpiar(etiqueta) + ":", new_x="RIGHT", new_y="TOP")
         self.set_font("Helvetica", "", 10)
         self.set_text_color(*BLANCO)
-        self.multi_cell(0, 6, str(valor))
+        self.multi_cell(130, 6, _limpiar(str(valor)))
 
     def barra_dimension(self, nombre: str, valor: float, descripcion: str = "", max_val: float = 5.0):
         pct = min(valor / max_val, 1.0)
@@ -281,10 +304,37 @@ def generar_pdf_saga(
     # Intentar añadir imagen de la raza
     ruta_img = _breed_a_archivo(raza_nombre)
 
-    pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
-    pdf.etiqueta_valor("Equivalente real", raza_nombre)
-    if explicacion_equivalencia and explicacion_equivalencia != "nan":
-        pdf.cuerpo_gris(explicacion_equivalencia)
+    # Intentar añadir imagen de la raza
+    ruta_img = _breed_a_archivo(raza_nombre)
+    if ruta_img:
+        try:
+            y_ini = pdf.get_y()
+            pdf.image(ruta_img, x=10, y=y_ini, w=45, h=45)
+            pdf.set_xy(60, y_ini)
+            pdf.set_font("Helvetica", "B", 11)
+            pdf.set_text_color(*DORADO)
+            pdf.multi_cell(140, 7, _limpiar(criatura_nombre))
+            pdf.set_x(60)
+            pdf.set_font("Helvetica", "", 10)
+            pdf.set_text_color(*BLANCO)
+            pdf.multi_cell(140, 6, _limpiar(f"Equivalente real: {raza_nombre}"))
+            if explicacion_equivalencia and explicacion_equivalencia != "nan":
+                pdf.set_x(60)
+                pdf.set_font("Helvetica", "I", 9)
+                pdf.set_text_color(*GRIS)
+                pdf.multi_cell(140, 5, _limpiar(explicacion_equivalencia))
+            if pdf.get_y() < y_ini + 48:
+                pdf.set_y(y_ini + 48)
+        except Exception:
+            pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
+            pdf.etiqueta_valor("Equivalente real", raza_nombre)
+            if explicacion_equivalencia and explicacion_equivalencia != "nan":
+                pdf.cuerpo_gris(explicacion_equivalencia)
+    else:
+        pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
+        pdf.etiqueta_valor("Equivalente real", raza_nombre)
+        if explicacion_equivalencia and explicacion_equivalencia != "nan":
+            pdf.cuerpo_gris(explicacion_equivalencia)
 
     pdf.ln(6)
 
