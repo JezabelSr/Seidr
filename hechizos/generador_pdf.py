@@ -211,6 +211,13 @@ def generar_pdf_saga(
     explicacion_equivalencia: str,
 ) -> bytes:
 
+    # Limpiar todos los textos de entrada
+    universo_nombre = _limpiar(universo_nombre)
+    personaje_nombre = _limpiar(personaje_nombre)
+    criatura_nombre = _limpiar(criatura_nombre)
+    raza_nombre = _limpiar(raza_nombre)
+    explicacion_equivalencia = _limpiar(explicacion_equivalencia)
+
     pdf = SeidrPDF("Tu Saga")
     pdf.add_page()
     pdf.fondo_oscuro()

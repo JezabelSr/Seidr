@@ -408,7 +408,7 @@ def pagina_inicio():
 
     # ── Texto Seiðr ──
     _html_texto = (
-        "<div style='max-width:720px;margin:1rem auto 1.2rem;text-align:center;padding:0 1rem;'>"
+        "<div style='max-width:720px;margin:0.5rem auto 0.8rem;text-align:center;padding:0 1rem;'>"
         "<p style='font-family:Cinzel,serif;color:#c9a84c;font-size:0.85rem;"
         "letter-spacing:0.2em;margin-bottom:1rem;'>"
         "ᚱ SEIÐR &nbsp;·&nbsp; <em style='font-family:Crimson Pro,serif;font-style:italic;'>"
