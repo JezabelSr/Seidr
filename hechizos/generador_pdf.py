@@ -110,6 +110,10 @@ class SeidrPDF(FPDF):
         self.set_auto_page_break(auto=True, margin=20)
 
     def header(self):
+        # Fondo oscuro en cada página automáticamente
+        self.set_fill_color(*OSCURO)
+        self.rect(0, 0, 210, 297, "F")
+        # Barra dorada superior
         self.set_fill_color(*DORADO)
         self.rect(0, 0, 210, 8, "F")
         self.set_font("Helvetica", "B", 9)
@@ -209,63 +213,69 @@ def generar_pdf_saga(
     criatura_nombre: str,
     raza_nombre: str,
     explicacion_equivalencia: str,
+    criatura_descripcion: str = "",
     universo_id: int = 0,
     personaje_id: int = 0,
 ) -> bytes:
 
-    # Limpiar todos los textos de entrada
-    universo_nombre = _limpiar(universo_nombre)
-    personaje_nombre = _limpiar(personaje_nombre)
-    criatura_nombre = _limpiar(criatura_nombre)
-    raza_nombre = _limpiar(raza_nombre)
+    # Limpiar todos los textos
+    universo_nombre         = _limpiar(universo_nombre)
+    personaje_nombre        = _limpiar(personaje_nombre)
+    criatura_nombre         = _limpiar(criatura_nombre)
+    raza_nombre             = _limpiar(raza_nombre)
     explicacion_equivalencia = _limpiar(explicacion_equivalencia)
 
     pdf = SeidrPDF("Tu Saga")
     pdf.add_page()
-    pdf.fondo_oscuro()
 
-    # ── PORTADA ──
+    # ── TÍTULO ──
     pdf.ln(5)
     pdf.set_font("Helvetica", "B", 22)
     pdf.set_text_color(*DORADO)
-    pdf.cell(0, 12, "TU SAGA SEIDR", align="C", ln=True)
+    pdf.cell(0, 12, "TU SAGA SEIDR", align="C", new_x="LMARGIN", new_y="NEXT")
     pdf.set_font("Helvetica", "I", 11)
     pdf.set_text_color(*GRIS)
-    pdf.cell(0, 7, "Cuando tu saga se convierte en brujula", align="C", ln=True)
-    pdf.ln(6)
-
-    # Línea decorativa
+    pdf.cell(0, 7, "Cuando tu saga se convierte en brujula", align="C", new_x="LMARGIN", new_y="NEXT")
+    pdf.ln(4)
     pdf.set_draw_color(*DORADO)
     pdf.set_line_width(0.3)
     pdf.line(50, pdf.get_y(), 160, pdf.get_y())
-    pdf.ln(8)
+    pdf.ln(6)
 
     # ── UNIVERSO Y PERSONAJE ──
     pdf.seccion("Tu universo y personaje")
     pdf.etiqueta_valor("Universo", universo_nombre)
-    pdf.etiqueta_valor("Personaje asignado", personaje_nombre)
+    pdf.ln(2)
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.set_text_color(*DORADO)
+    pdf.cell(0, 7, _limpiar(personaje_nombre), align="C", new_x="LMARGIN", new_y="NEXT")
+    pdf.ln(2)
 
     if personaje_data:
-        rol = str(personaje_data.get("rol", ""))
+        rol = _limpiar(str(personaje_data.get("rol", "")))
         if rol and rol != "nan":
-            pdf.etiqueta_valor("Rol en el universo", rol)
-        descripcion = str(personaje_data.get("descripcion", ""))
+            pdf.etiqueta_valor("Rol", rol)
+
+        descripcion = _limpiar(str(personaje_data.get("descripcion", "")))
         if descripcion and descripcion != "nan":
             pdf.ln(2)
-            pdf.cuerpo_gris(descripcion)
-        justificacion = str(personaje_data.get("justificacion", ""))
+            pdf.set_font("Helvetica", "I", 9)
+            pdf.set_text_color(*GRIS)
+            pdf.multi_cell(0, 5, descripcion)
+
+        justificacion = _limpiar(str(personaje_data.get("justificacion", "")))
         if justificacion and justificacion != "nan":
             pdf.ln(1)
             pdf.set_font("Helvetica", "I", 9)
             pdf.set_text_color(*GRIS)
-            pdf.multi_cell(0, 5, f'Por que este personaje: "{justificacion}"')
+            pdf.multi_cell(0, 5, f"Por que este personaje: {justificacion}")
     pdf.ln(3)
 
     # ── PERFIL DE 8 DIMENSIONES ──
     pdf.seccion("Tu perfil de 8 dimensiones")
     pdf.set_font("Helvetica", "", 9)
     pdf.set_text_color(*GRIS)
-    pdf.cell(0, 5, "Puntuaciones de 0 a 5 obtenidas en el test de perfil.", ln=True)
+    pdf.cell(0, 5, "Puntuaciones de 0 a 5 obtenidas en el test de perfil.", new_x="LMARGIN", new_y="NEXT")
     pdf.ln(3)
 
     DIMS = [
@@ -289,17 +299,13 @@ def generar_pdf_saga(
         pdf.seccion("Orientacion neurodivergente")
         pdf.set_font("Helvetica", "", 9)
         pdf.set_text_color(*GRIS)
-        pdf.cell(0, 5,
-                 "Perfil orientativo basado en tus puntuaciones. No equivale a un diagnostico clinico.",
-                 ln=True)
+        pdf.cell(0, 5, "Perfil orientativo. No equivale a un diagnostico clinico.", new_x="LMARGIN", new_y="NEXT")
         pdf.ln(3)
         for nd in orientacion_nd:
-            # Nombre ND
             pdf.set_font("Helvetica", "B", 10)
             pdf.set_text_color(*DORADO)
-            pdf.cell(0, 6, nd, ln=True)
-            # Descripción
-            desc_nd = DESC_ND.get(nd, "")
+            pdf.cell(0, 6, _limpiar(nd), new_x="LMARGIN", new_y="NEXT")
+            desc_nd = _limpiar(DESC_ND.get(nd, ""))
             if desc_nd:
                 pdf.set_font("Helvetica", "", 9)
                 pdf.set_text_color(*BLANCO)
@@ -310,41 +316,25 @@ def generar_pdf_saga(
     # ── CRIATURA ──
     pdf.seccion("Tu criatura de asistencia")
 
-    # Intentar añadir imagen de la raza
-    ruta_img = _breed_a_archivo(raza_nombre)
+    pdf.set_font("Helvetica", "B", 13)
+    pdf.set_text_color(*DORADO)
+    pdf.cell(0, 8, criatura_nombre, align="C", new_x="LMARGIN", new_y="NEXT")
+    pdf.ln(3)
 
-    # Intentar añadir imagen de la raza
-    ruta_img = _breed_a_archivo(raza_nombre)
-    if ruta_img:
-        try:
-            y_ini = pdf.get_y()
-            pdf.image(ruta_img, x=10, y=y_ini, w=45, h=45)
-            pdf.set_xy(60, y_ini)
-            pdf.set_font("Helvetica", "B", 11)
-            pdf.set_text_color(*DORADO)
-            pdf.multi_cell(140, 7, _limpiar(criatura_nombre))
-            pdf.set_x(60)
-            pdf.set_font("Helvetica", "", 10)
-            pdf.set_text_color(*BLANCO)
-            pdf.multi_cell(140, 6, _limpiar(f"Equivalente real: {raza_nombre}"))
-            if explicacion_equivalencia and explicacion_equivalencia != "nan":
-                pdf.set_x(60)
-                pdf.set_font("Helvetica", "I", 9)
-                pdf.set_text_color(*GRIS)
-                pdf.multi_cell(140, 5, _limpiar(explicacion_equivalencia))
-            if pdf.get_y() < y_ini + 48:
-                pdf.set_y(y_ini + 48)
-        except Exception:
-            pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
-            pdf.etiqueta_valor("Equivalente real", raza_nombre)
-            if explicacion_equivalencia and explicacion_equivalencia != "nan":
-                pdf.cuerpo_gris(explicacion_equivalencia)
-    else:
-        pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
-        pdf.etiqueta_valor("Equivalente real", raza_nombre)
-        if explicacion_equivalencia and explicacion_equivalencia != "nan":
-            pdf.cuerpo_gris(explicacion_equivalencia)
+    # Descripción narrativa de la criatura
+    criatura_descripcion = _limpiar(criatura_descripcion)
+    if criatura_descripcion and criatura_descripcion != "nan":
+        pdf.set_font("Helvetica", "I", 9)
+        pdf.set_text_color(*GRIS)
+        pdf.multi_cell(0, 5, criatura_descripcion)
+        pdf.ln(3)
 
+    pdf.etiqueta_valor("Tu equivalente real", raza_nombre)
+    if explicacion_equivalencia and explicacion_equivalencia != "nan":
+        pdf.ln(1)
+        pdf.set_font("Helvetica", "I", 9)
+        pdf.set_text_color(*GRIS)
+        pdf.multi_cell(0, 5, explicacion_equivalencia)
     pdf.ln(6)
 
     # ── CÓDIGO SEIÐR ──
@@ -352,7 +342,7 @@ def generar_pdf_saga(
         try:
             from codigo_seidr import generar_codigo
             codigo = generar_codigo(universo_id, personaje_id, orientacion_nd, perfil_usuario)
-            pdf.ln(4)
+            pdf.ln(2)
             pdf.set_draw_color(*DORADO)
             pdf.set_line_width(0.3)
             pdf.line(30, pdf.get_y(), 180, pdf.get_y())
@@ -363,45 +353,26 @@ def generar_pdf_saga(
             pdf.set_font("Helvetica", "B", 13)
             pdf.set_text_color(*BLANCO)
             pdf.cell(0, 8, codigo, align="C", new_x="LMARGIN", new_y="NEXT")
-            pdf.ln(2)
+            pdf.ln(3)
             pdf.set_font("Helvetica", "I", 8)
             pdf.set_text_color(*GRIS)
             pdf.multi_cell(0, 5,
                 "Las runas de tu saga han quedado grabadas en este codigo. "
                 "Guardalo bien - con el podras recuperar tu perfil completo "
-                "en cualquier momento, sin necesidad de repetir los tests. "
-                "En la seccion 'Ya estuve aqui' de Seidr, este codigo abrira tu camino.",
+                "en cualquier momento desde la seccion Ya estuve aqui.",
                 align="C")
         except Exception:
             pass
 
     # ── PIE ──
+    pdf.ln(4)
     pdf.set_font("Helvetica", "I", 8)
     pdf.set_text_color(*GRIS)
     pdf.cell(0, 5,
              "Documento generado de forma privada por Seidr. Ningun dato ha sido almacenado en servidores externos.",
-             align="C", ln=True)
+             align="C", new_x="LMARGIN", new_y="NEXT")
 
     return bytes(pdf.output())
-
-
-# ── PDF Módulos 3-7 ───────────────────────────────────────────────────────────
-
-MODULO_TITULOS = {
-    3: "Tu forma de comunicarte",
-    4: "Tu forma de aprender",
-    5: "Tu forma de socializar",
-    6: "Tu cuerpo",
-    7: "Orientacion clinica",
-}
-
-MODULO_SUBTITULOS = {
-    3: "Comunicacion",
-    4: "Aprendizaje y Funcion Ejecutiva",
-    5: "Sociabilidad",
-    6: "Propiocepcion y Sensorialidad",
-    7: "Tests, profesionales y recursos clinicos",
-}
 
 
 def generar_pdf_modulo(
@@ -416,7 +387,6 @@ def generar_pdf_modulo(
 
     pdf = SeidrPDF(titulo)
     pdf.add_page()
-    pdf.fondo_oscuro()
 
     pdf.ln(5)
     pdf.set_font("Helvetica", "B", 16)
