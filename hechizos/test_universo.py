@@ -142,7 +142,7 @@ def pagina_test_universo():
 
     # Cabecera
     st.markdown(
-        "<div style='text-align:center;padding:2rem 0 1rem'>"
+        "<div style='text-align:center;padding:0.3rem 0 0.3rem'>"
         "<h1 style=\"font-family:'Cinzel',serif;color:#c9a84c;"
         "letter-spacing:0.1em;font-size:1.8rem\">ᚦ Test de universo</h1>"
         "<p style='color:#9a9080;font-style:italic'>"

@@ -257,6 +257,14 @@ section[data-testid="stMain"] .stMainBlockContainer {
 #MainMenu { visibility: hidden; }
 footer { visibility: hidden; }
 [data-testid="stToolbar"] { display: none; }
+
+/* Reducir padding superior del contenido principal */
+.stMainBlockContainer {
+    padding-top: 1rem !important;
+}
+[data-testid="stMain"] > div {
+    padding-top: 0.5rem !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
