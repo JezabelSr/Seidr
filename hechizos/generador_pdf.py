@@ -209,6 +209,8 @@ def generar_pdf_saga(
     criatura_nombre: str,
     raza_nombre: str,
     explicacion_equivalencia: str,
+    universo_id: int = 0,
+    personaje_id: int = 0,
 ) -> bytes:
 
     # Limpiar todos los textos de entrada
@@ -344,6 +346,34 @@ def generar_pdf_saga(
             pdf.cuerpo_gris(explicacion_equivalencia)
 
     pdf.ln(6)
+
+    # ── CÓDIGO SEIÐR ──
+    if universo_id and personaje_id:
+        try:
+            from codigo_seidr import generar_codigo
+            codigo = generar_codigo(universo_id, personaje_id, orientacion_nd, perfil_usuario)
+            pdf.ln(4)
+            pdf.set_draw_color(*DORADO)
+            pdf.set_line_width(0.3)
+            pdf.line(30, pdf.get_y(), 180, pdf.get_y())
+            pdf.ln(4)
+            pdf.set_font("Helvetica", "B", 11)
+            pdf.set_text_color(*DORADO)
+            pdf.cell(0, 7, "TU CODIGO DE REGRESO", align="C", new_x="LMARGIN", new_y="NEXT")
+            pdf.set_font("Helvetica", "B", 13)
+            pdf.set_text_color(*BLANCO)
+            pdf.cell(0, 8, codigo, align="C", new_x="LMARGIN", new_y="NEXT")
+            pdf.ln(2)
+            pdf.set_font("Helvetica", "I", 8)
+            pdf.set_text_color(*GRIS)
+            pdf.multi_cell(0, 5,
+                "Las runas de tu saga han quedado grabadas en este codigo. "
+                "Guardalo bien - con el podras recuperar tu perfil completo "
+                "en cualquier momento, sin necesidad de repetir los tests. "
+                "En la seccion 'Ya estuve aqui' de Seidr, este codigo abrira tu camino.",
+                align="C")
+        except Exception:
+            pass
 
     # ── PIE ──
     pdf.set_font("Helvetica", "I", 8)

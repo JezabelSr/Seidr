@@ -56,6 +56,16 @@ try:
 except ImportError:
     def mostrar_modulo_7(orientacion_nd=None): st.warning("Módulo modulo_7 no encontrado en hechizos/")
 
+try:
+    from modo_profesional import pagina_profesional
+except ImportError:
+    def pagina_profesional(): st.warning("Módulo modo_profesional no encontrado en hechizos/")
+
+try:
+    from modulo_regreso import pagina_regreso
+except ImportError:
+    def pagina_regreso(): st.warning("Módulo modulo_regreso no encontrado en hechizos/")
+
 st.set_page_config(
     page_title="Seiðr",
     page_icon="iconografia/favicon_seidr.png",
@@ -321,6 +331,7 @@ MODULOS = {
     "ᛊ  Tu cuerpo":               "modulo_6",
     "ᛏ  Orientación clínica":     "modulo_7",
     "⚕  Modo profesional":        "profesional",
+    "ᚺ  Ya estuve aquí":          "regreso",
 }
 
 with st.sidebar:
@@ -408,7 +419,7 @@ def pagina_inicio():
 
     # ── Texto Seiðr ──
     _html_texto = (
-        "<div style='max-width:720px;margin:0.5rem auto 0.8rem;text-align:center;padding:0 1rem;'>"
+        "<div style='max-width:720px;margin:0.3rem auto 0.5rem;text-align:center;padding:0 1rem;'>"
         "<p style='font-family:Cinzel,serif;color:#c9a84c;font-size:0.85rem;"
         "letter-spacing:0.2em;margin-bottom:1rem;'>"
         "ᚱ SEIÐR &nbsp;·&nbsp; <em style='font-family:Crimson Pro,serif;font-style:italic;'>"
@@ -593,3 +604,5 @@ elif pagina_id == "profesional":
         pagina_profesional()
     except ImportError:
         st.warning("Módulo modo_profesional no encontrado en hechizos/")
+elif pagina_id == "regreso":
+    pagina_regreso()

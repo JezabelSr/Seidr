@@ -299,15 +299,19 @@ def pagina_modulo_2():
 
     try:
         from generador_pdf import generar_pdf_saga
+        personaje_data = st.session_state.get("personaje_data", {})
+        personaje_id_pdf = int(personaje_data.get("personaje_id", 0)) if personaje_data else 0
         pdf_bytes = generar_pdf_saga(
             universo_nombre=universo_nombre,
             personaje_nombre=st.session_state.get("personaje_asignado", ""),
-            personaje_data=st.session_state.get("personaje_data", {}),
+            personaje_data=personaje_data,
             perfil_usuario=perfil,
             orientacion_nd=st.session_state.get("orientacion_nd", []),
             criatura_nombre=nombre_criatura,
             raza_nombre=nombre_raza_txt,
             explicacion_equivalencia=explicacion,
+            universo_id=universo_id,
+            personaje_id=personaje_id_pdf,
         )
         st.download_button(
             label="Descargar mi Saga en PDF",
