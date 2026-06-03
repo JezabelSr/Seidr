@@ -281,34 +281,10 @@ def generar_pdf_saga(
     # Intentar añadir imagen de la raza
     ruta_img = _breed_a_archivo(raza_nombre)
 
-    if ruta_img:
-        try:
-            col_img_w = 50
-            x_img = 10
-            y_img = pdf.get_y()
-            # Imagen encima, texto debajo — evita problemas de espacio horizontal
-            pdf.image(ruta_img, x=x_img, y=y_img, w=col_img_w)
-            pdf.set_y(y_img + col_img_w + 3)
-            pdf.set_font("Helvetica", "B", 11)
-            pdf.set_text_color(*DORADO)
-            pdf.cell(0, 7, criatura_nombre, new_x="LMARGIN", new_y="NEXT")
-            pdf.set_font("Helvetica", "", 10)
-            pdf.set_text_color(*BLANCO)
-            pdf.cell(0, 6, f"Equivalente real: {raza_nombre}", new_x="LMARGIN", new_y="NEXT")
-            if explicacion_equivalencia and explicacion_equivalencia != "nan":
-                pdf.set_font("Helvetica", "I", 9)
-                pdf.set_text_color(*GRIS)
-                pdf.multi_cell(0, 5, explicacion_equivalencia)
-        except Exception:
-            pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
-            pdf.etiqueta_valor("Equivalente real", raza_nombre)
-            if explicacion_equivalencia and explicacion_equivalencia != "nan":
-                pdf.cuerpo_gris(explicacion_equivalencia)
-    else:
-        pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
-        pdf.etiqueta_valor("Equivalente real", raza_nombre)
-        if explicacion_equivalencia and explicacion_equivalencia != "nan":
-            pdf.cuerpo_gris(explicacion_equivalencia)
+    pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
+    pdf.etiqueta_valor("Equivalente real", raza_nombre)
+    if explicacion_equivalencia and explicacion_equivalencia != "nan":
+        pdf.cuerpo_gris(explicacion_equivalencia)
 
     pdf.ln(6)
 
