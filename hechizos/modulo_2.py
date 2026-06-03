@@ -30,29 +30,14 @@ UNIVERSOS_COPYRIGHT = {
 @st.cache_data
 def cargar_criaturas(universo_id: int):
     try:
-        from db import cargar_criaturas as _db_criaturas
-        df = _db_criaturas()
-        if not df.empty:
-            return df[df["universo_id"] == universo_id].reset_index(drop=True)
-        raise Exception("BD vacía")
-    except Exception:
-        pass
-    try:
         df = pd.read_csv("universos/criaturas.csv", engine="python")
         return df[df["universo_id"] == universo_id].reset_index(drop=True)
     except Exception:
         return pd.DataFrame()
 
 
+@st.cache_data
 def cargar_razas():
-    try:
-        from db import cargar_razas as _db_razas
-        df = _db_razas()
-        if not df.empty:
-            return df
-        raise Exception("BD vacía")
-    except Exception:
-        pass
     try:
         return pd.read_csv("universos/razas_akc_limpio.csv", engine="python")
     except Exception:
@@ -227,13 +212,33 @@ def pagina_modulo_2():
             unsafe_allow_html=True
         )
 
-
+        if explicacion and explicacion != "nan":
+            st.markdown(
+                f"<div style='background:#1a1a28;border-left:3px solid #4a7fa5;"
+                f"padding:1rem 1.5rem;border-radius:0 4px 4px 0;margin-bottom:1.5rem'>"
+                f"<p style='color:#9a9080;font-size:0.85rem;line-height:1.6;margin:0'>"
+                f"{explicacion}</p></div>",
+                unsafe_allow_html=True
+            )
 
         try:
-            from razas_helper import buscar_raza
-            raza, nombre_raza_display = buscar_raza(raza_id, explicacion, razas)
+            rid_str = str(raza_id).strip()
+            if rid_str.endswith(".0"):
+                rid_str = rid_str[:-2]
+            
+            if rid_str.isdigit() and int(rid_str) > 0:
+                raza = razas.iloc[int(rid_str) - 1]
+            else:
+                for col_name in ["breed", "raza", "name", "id"]:
+                    if col_name in razas.columns:
+                        match = razas[razas[col_name].astype(str).str.lower().str.strip() == rid_str.lower()]
+                        if match.empty:
+                            match = razas[razas[col_name].astype(str).str.lower().str.contains(rid_str.lower(), na=False)]
+                        if not match.empty:
+                            raza = match.iloc[0]
+                            break
         except Exception:
-            raza, nombre_raza_display = None, ""
+            raza = None
 
         if raza is not None:
             col_raza_img, col_raza_info = st.columns([1, 2])
@@ -241,6 +246,7 @@ def pagina_modulo_2():
                 cargar_imagen(raza.get("url_imagen", ""))
 
             with col_raza_info:
+                nombre_raza_display = raza.get("breed", raza.get("raza", rid_str.capitalize()))
                 st.markdown(
                     f"<p style=\"font-family:'Cinzel',serif;color:#c9a84c;"
                     f"font-size:1.1rem;margin-bottom:0.8rem\">{nombre_raza_display}</p>",
@@ -271,102 +277,57 @@ def pagina_modulo_2():
                         unsafe_allow_html=True
                     )
 
-    # ── PERGAMINO DE ASISTENCIA (DESCARGABLE ANÓNIMO) ──
+    # ── DESCARGA PDF SAGA ──
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown(
-        "<div style='background:#1c1c2d; border: 1px dashed #c9a84c; padding: 1.5rem; border-radius: 8px; text-align: center; margin-bottom: 2rem;'>"
-        "<h3 style=\"font-family:'Cinzel',serif; color:#c9a84c; font-size:1.1rem; margin-top:0;\">📜 Sella tu Pacto de Acompañamiento</h3>"
-        "<p style='color:#9a9080; font-size:0.85rem; max-width: 500px; margin: 0 auto 1rem;'>"
-        "Descarga tu guía de ruta personalizada en un pergamino digital. Procesado al vuelo en tu navegador: privacidad absoluta sin almacenamiento de datos.</p>",
+        "<div style='background:#1c1c2d;border:1px dashed #c9a84c;"
+        "padding:1.5rem;border-radius:8px;text-align:center;margin-bottom:2rem;'>"
+        "<h3 style=\"font-family:'Cinzel',serif;color:#c9a84c;font-size:1.1rem;margin-top:0;\">"
+        "Descarga tu saga completa</h3>"
+        "<p style='color:#9a9080;font-size:0.85rem;max-width:500px;margin:0 auto 1rem;'>"
+        "Universo, personaje, perfil de 8 dimensiones, orientacion ND, criatura y equivalente real. "
+        "Generado al momento en tu navegador.</p>",
         unsafe_allow_html=True
     )
 
     nombre_criatura = criatura["nombre"]
-    nombre_raza_txt = nombre_raza_display if nombre_raza_display else (raza.get("breed", "Raza por definir") if raza is not None else "Raza por definir")
-    
-    # Generación de la plantilla de texto plano estético (.txt)
-    texto_pergamino = f"""╔═══════════════════════════════════════════════════════════╗
-  SEIÐR — PACTO DE ACOMPAÑAMIENTO Y SOPORTE CLÍNICO
-╚═══════════════════════════════════════════════════════════╝
+    nombre_raza_txt = ""
+    if explicacion and explicacion != "nan" and " — " in explicacion:
+        nombre_raza_txt = explicacion.split(" — ")[0].strip()
+    elif raza is not None:
+        nombre_raza_txt = str(raza.get("breed", "Raza canina equilibrada"))
 
-[ UNIVERSO DE CONEXIÓN ]: {universo_nombre.upper()}
+    try:
+        from generador_pdf import generar_pdf_saga
+        pdf_bytes = generar_pdf_saga(
+            universo_nombre=universo_nombre,
+            personaje_nombre=st.session_state.get("personaje_asignado", ""),
+            personaje_data=st.session_state.get("personaje_data", {}),
+            perfil_usuario=perfil,
+            orientacion_nd=st.session_state.get("orientacion_nd", []),
+            criatura_nombre=nombre_criatura,
+            raza_nombre=nombre_raza_txt,
+            explicacion_equivalencia=explicacion,
+        )
+        st.download_button(
+            label="Descargar mi Saga en PDF",
+            data=pdf_bytes,
+            file_name=f"Seidr_Saga_{universo_nombre.replace(' ','_')}.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+        )
+    except Exception as e:
+        st.error(f"Error generando PDF: {e}")
 
-Tu espectro y perfil neurodivergente manifiestan una afinidad
-terapéutica de compensación con el siguiente guardián:
-
-PROTECTOR ASIGNADO : {nombre_criatura.upper()}
-EQUIVALENTE REAL   : {nombre_raza_txt.upper()}
-
-─────────────────────────────────────────────────────────────
-▶ RASGOS ANALÍTICOS DE LA CRIATURA (PERFIL DE COMPENSACIÓN):
-─────────────────────────────────────────────────────────────
-• CALMA (Frente a desregulación emocional):   {int((dims_criatura['Calma']/5)*100)}% 
-• VÍNCULO (Frente a necesidades sociales):    {int((dims_criatura['Vínculo']/5)*100)}% 
-• ESTIMULACIÓN (Frente a bucles de hiperfoco): {int((dims_criatura['Estimulación']/5)*100)}% 
-• INDEPENDENCIA (Soporte en función ejecutiva): {int((dims_criatura['Independencia']/5)*100)}%
-
-─────────────────────────────────────────────────────────────
-▶ EXPLICACIÓN DE LA EQUIVALENCIA CLÍNICA:
-─────────────────────────────────────────────────────────────
-{explicacion if (explicacion and explicacion != 'nan') else 'Soporte adaptado minuciosamente a los picos de demanda del entorno del usuario.'}
-
-─────────────────────────────────────────────────────────────
-▶ GUÍA DE RUTA INMEDIATA (¿Por dónde tirar?):
-─────────────────────────────────────────────────────────────
-1. REGULACIÓN CONSCIENTE: Emplea la simbología o imágenes de {nombre_criatura}
-   como un anclaje externo/foco primario en momentos de sobrecarga cognitiva.
-2. ADAPTACIÓN DE ENTORNOS: La raza {nombre_raza_txt} refleja tu mapa ideal de 
-   soporte. Diseña tus rutinas buscando un balance idéntico entre sus niveles de 
-   calma e iniciativa autónoma.
-3. PRÓXIMO PASO: Avanza al Módulo 3 en la aplicación para configurar tus 
-   estrategias de comunicación personalizada y gestión del cansancio social.
-
-─────────────────────────────────────────────────────────────
-Documento generado de forma 100% privada por el motor SEIÐR.
-Ningún dato clínico ha sido registrado en servidores externos.
-─────────────────────────────────────────────────────────────"""
-
-    st.download_button(
-        label="📥 Descargar mi Pergamino de Asistencia (.txt)",
-        data=texto_pergamino,
-        file_name=f"Seidr_Pacto_{nombre_criatura}.txt",
-        mime="text/plain"
-    )
     st.markdown("</div>", unsafe_allow_html=True)
 
-    # ── Narrador contextual ──
-    try:
-        from narrador import get_narrador
-        universo_id = st.session_state.get("universo_elegido")
-        texto_narrador = get_narrador(universo_id, "criatura_asignada")
-        if texto_narrador:
-            st.markdown(
-                f"<div style='background:rgba(201,168,76,0.06);border-left:3px solid #c9a84c;"
-                f"border-radius:0 8px 8px 0;padding:1rem 1.5rem;margin:1rem 0 1.5rem;'>"
-                f"<p style='color:#c9a84c;font-size:0.9rem;font-style:italic;margin:0;"
-                f"line-height:1.7;'>{texto_narrador}</p></div>",
-                unsafe_allow_html=True
-            )
-    except Exception:
-        pass
-
-    # Botón para avanzar al módulo 3
+    # Botón inferior para avanzar de pestaña
     st.markdown("---")
-    col_btn = st.columns([1, 2, 1])[1]
-    with col_btn:
-        if st.button("ᚲ Continuar a Comunicación →", use_container_width=True, key="btn_m2_siguiente"):
-            for etiqueta, key in {
-                "ᚱ  Inicio": "inicio",
-                "ᚦ  Test de universo": "test_universo",
-                "ᚨ  Tu perfil": "modulo_1",
-                "ᚢ  Tu criatura": "modulo_2",
-                "ᚲ  Comunicación": "modulo_3",
-                "ᚷ  Aprendizaje": "modulo_4",
-                "ᛉ  Sociabilidad": "modulo_5",
-                "ᛊ  Tu cuerpo": "modulo_6",
-                "ᛏ  Orientación clínica": "modulo_7",
-                "⚕  Modo profesional": "profesional",
-            }.items():
-                if key == "modulo_3":
-                    st.session_state["_pagina_activa"] = etiqueta
-                    st.rerun()
+    st.markdown(
+        "<div style='background:#1a1a28;border-left:3px solid #c9a84c;"
+        "padding:1rem 1.5rem;border-radius:0 4px 4px 0;text-align:center'>"
+        "<p style='color:#9a9080;font-size:0.9rem;margin:0'>"
+        "← Selecciona <strong style='color:#c9a84c'>ᚲ Módulo 3 · Comunicación</strong> "
+        "en el menú lateral para continuar</p></div>",
+        unsafe_allow_html=True
+    )

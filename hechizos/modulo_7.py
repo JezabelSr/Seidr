@@ -100,4 +100,28 @@ def mostrar_modulo_7(orientacion_nd=None):
         )
         _bloque_recursos(subset)
 
+
+    # ── Descarga PDF del módulo ──
+    try:
+        from generador_pdf import generar_pdf_modulo
+        from modulo_3 import cargar_contenido, cargar_recursos
+        _df_cont = cargar_contenido()
+        _df_rec = cargar_recursos()
+        _pdf = generar_pdf_modulo(
+            modulo=7,
+            orientacion_nd=nds,
+            df_contenido=_df_cont,
+            df_recursos=_df_rec,
+        )
+        st.download_button(
+            label="📥 Descargar este módulo en PDF",
+            data=_pdf,
+            file_name=f"Seidr_Modulo_7.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            key="btn_pdf_7",
+        )
+    except Exception as e:
+        pass
+
     _nota_pie()

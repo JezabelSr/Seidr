@@ -70,4 +70,28 @@ def mostrar_modulo_4(orientacion_nd=None):
         st.markdown("<hr style='border-color:#2a2a3a; margin:1.5rem 0;'>", unsafe_allow_html=True)
         _bloque_recursos(df_rec_filtrado)
 
-    _nota_pie()
+
+    # ── Descarga PDF del módulo ──
+    try:
+        from generador_pdf import generar_pdf_modulo
+        from modulo_3 import cargar_contenido, cargar_recursos
+        _df_cont = cargar_contenido()
+        _df_rec = cargar_recursos()
+        _pdf = generar_pdf_modulo(
+            modulo=4,
+            orientacion_nd=nds,
+            df_contenido=_df_cont,
+            df_recursos=_df_rec,
+        )
+        st.download_button(
+            label="Descargar este modulo en PDF",
+            data=_pdf,
+            file_name="Seidr_Modulo_4.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+            key="btn_pdf_4",
+        )
+    except Exception:
+        pass
+
+        _nota_pie()
