@@ -274,7 +274,6 @@ def pagina_test_universo():
             f"Ahora descubriremos qué personaje se parece más a ti.</p></div>",
             unsafe_allow_html=True
         )
-        # Narrador
         try:
             from narrador import get_narrador
             universo_id = st.session_state.get("universo_elegido")
@@ -282,10 +281,8 @@ def pagina_test_universo():
             if texto_narrador:
                 st.markdown(
                     f"<div style='background:rgba(201,168,76,0.06);border-left:3px solid #c9a84c;"
-                    f"border-radius:0 8px 8px 0;padding:1rem 1.5rem;margin:1rem 0 1.5rem;"
-                    f"text-align:center;'>"
-                    f"<p style='color:#c9a84c;font-size:0.9rem;font-style:italic;margin:0;"
-                    f"line-height:1.7;'>{texto_narrador}</p></div>",
+                    f"border-radius:0 8px 8px 0;padding:1rem 1.5rem;margin:1rem 0 1.5rem;text-align:center;'>"
+                    f"<p style='color:#c9a84c;font-size:0.9rem;font-style:italic;margin:0;line-height:1.7;'>{texto_narrador}</p></div>",
                     unsafe_allow_html=True
                 )
         except Exception:
