@@ -218,7 +218,7 @@ def pagina_modulo_1():
 
     # Cabecera
     st.markdown(
-        f"<div style='text-align:center;padding:1.5rem 0 1rem'>"
+        f"<div style='text-align:center;padding:0.8rem 0 0.5rem'>"
         f"<h1 style=\"font-family:'Cinzel',serif;color:#c9a84c;"
         f"letter-spacing:0.1em;font-size:1.8rem\">ᚨ Tu perfil</h1>"
         f"<p style='color:#9a9080;font-style:italic'>"
@@ -254,7 +254,7 @@ def pagina_modulo_1():
         # Pregunta
         st.markdown(
             f"<div style='background:#1a1a28;border-left:3px solid #c9a84c;"
-            f"padding:1.5rem;border-radius:0 4px 4px 0;margin:1rem 0 1.5rem'>"
+            f"padding:0.7rem 1rem;border-radius:0 4px 4px 0;margin:0.4rem 0 0.7rem'>"
             f"<p style=\"font-family:'Cinzel',serif;color:#e8e0d0;font-size:1rem;"
             f"margin:0;line-height:1.5\">{row['texto']}</p></div>",
             unsafe_allow_html=True

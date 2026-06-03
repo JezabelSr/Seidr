@@ -241,15 +241,15 @@ section[data-testid="stMain"] .stMainBlockContainer {
 
 .portada-box {
     width: 100%;
-    max-height: 340px;
+    max-height: 220px;
     overflow: hidden;
     border-radius: 6px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .portada-img {
     width: 100%;
-    height: 340px;
+    height: 220px;
     object-fit: cover;
     object-position: 50% 20%;
 }
