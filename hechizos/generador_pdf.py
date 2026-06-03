@@ -283,29 +283,23 @@ def generar_pdf_saga(
 
     if ruta_img:
         try:
-            col_img_w = 45
+            col_img_w = 50
             x_img = 10
             y_img = pdf.get_y()
-            pdf.image(ruta_img, x=x_img, y=y_img, w=col_img_w, h=col_img_w)
-            # Texto al lado de la imagen
-            pdf.set_xy(x_img + col_img_w + 5, y_img)
+            # Imagen encima, texto debajo — evita problemas de espacio horizontal
+            pdf.image(ruta_img, x=x_img, y=y_img, w=col_img_w)
+            pdf.set_y(y_img + col_img_w + 3)
             pdf.set_font("Helvetica", "B", 11)
             pdf.set_text_color(*DORADO)
-            pdf.cell(0, 7, criatura_nombre, ln=True)
-            pdf.set_x(x_img + col_img_w + 5)
+            pdf.cell(0, 7, criatura_nombre, new_x="LMARGIN", new_y="NEXT")
             pdf.set_font("Helvetica", "", 10)
             pdf.set_text_color(*BLANCO)
-            pdf.cell(0, 6, f"Equivalente real: {raza_nombre}", ln=True)
+            pdf.cell(0, 6, f"Equivalente real: {raza_nombre}", new_x="LMARGIN", new_y="NEXT")
             if explicacion_equivalencia and explicacion_equivalencia != "nan":
-                pdf.set_x(x_img + col_img_w + 5)
                 pdf.set_font("Helvetica", "I", 9)
                 pdf.set_text_color(*GRIS)
                 pdf.multi_cell(0, 5, explicacion_equivalencia)
-            # Mover cursor debajo de la imagen si es necesario
-            if pdf.get_y() < y_img + col_img_w + 3:
-                pdf.set_y(y_img + col_img_w + 3)
         except Exception:
-            # Si falla la imagen, mostrar solo texto
             pdf.etiqueta_valor("Criatura asignada", criatura_nombre)
             pdf.etiqueta_valor("Equivalente real", raza_nombre)
             if explicacion_equivalencia and explicacion_equivalencia != "nan":
