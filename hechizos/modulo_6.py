@@ -74,9 +74,9 @@ def mostrar_modulo_6(orientacion_nd=None):
     # ── Descarga PDF del módulo ──
     try:
         from generador_pdf import generar_pdf_modulo
-        from modulo_3 import cargar_contenido, cargar_recursos
-        _df_cont = cargar_contenido()
-        _df_rec = cargar_recursos()
+        from modulo_3 import cargar_contenido as _cc, cargar_recursos as _cr
+        _df_cont = _cc()
+        _df_rec = _cr()
         _pdf = generar_pdf_modulo(
             modulo=6,
             orientacion_nd=nds,
