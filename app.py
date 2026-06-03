@@ -375,6 +375,12 @@ with st.sidebar:
 
     # ── Botón RESET ──
     if st.button("↺  Reiniciar todo", use_container_width=True, key="btn_reset"):
+        # Incluir todas las claves de orden aleatorio
+        claves_orden = [k for k in st.session_state if
+                        k.startswith("_m1_orden") or
+                        k.startswith("_orden_opciones") or
+                        k.startswith("_m1_orden_opciones") or
+                        k in ("_orden_b1", "_orden_b2")]
         claves_a_limpiar = [
             "universo_elegido", "universo_nombre", "perfil_usuario",
             "personaje_asignado", "personaje_data", "criatura_asignada",
@@ -382,7 +388,7 @@ with st.sidebar:
             "test_fase", "test_idx", "test_resp_b1", "test_grupo", "test_resp_b2",
             "m1_fase", "m1_idx", "m1_respuestas",
             "m2_fase",
-        ]
+        ] + claves_orden
         for k in claves_a_limpiar:
             st.session_state.pop(k, None)
         st.rerun()

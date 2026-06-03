@@ -5,6 +5,7 @@ Flujo: elección directa O test (3 preguntas generales → grupo → 4 preguntas
 
 import streamlit as st
 import pandas as pd
+import random
 from collections import Counter
 
 UNIVERSOS_POR_GRUPO = {
@@ -70,10 +71,16 @@ def init_test():
         "test_resp_b1":     [],
         "test_grupo":       None,
         "test_resp_b2":     [],
+        "_orden_b1":        None,
+        "_orden_b2":        None,
     }
     for k, v in defaults.items():
         if k not in st.session_state:
             st.session_state[k] = v
+    # Limpiar órdenes si el test se reinicia
+    if st.session_state["test_fase"] == "inicio":
+        for k in ["_orden_b1", "_orden_b2"] + [k for k in st.session_state if k.startswith("_orden_opciones_")]:
+            st.session_state.pop(k, None)
 
 
 def calcular_grupo(respuestas):
@@ -204,7 +211,13 @@ def pagina_test_universo():
 
     # ─── BLOQUE 1 ───
     elif fase == "bloque1":
-        bloque1 = preguntas[preguntas["pregunta_id"].isin([1, 2, 3])].reset_index(drop=True)
+        bloque1_base = preguntas[preguntas["pregunta_id"].isin([1, 2, 3])].reset_index(drop=True)
+        if "_orden_b1" not in st.session_state or st.session_state["_orden_b1"] is None:
+            import time; random.seed(int(time.time()*1000)%99999)
+            orden_b1 = list(range(len(bloque1_base)))
+            random.shuffle(orden_b1)
+            st.session_state["_orden_b1"] = orden_b1
+        bloque1 = bloque1_base.iloc[st.session_state["_orden_b1"]].reset_index(drop=True)
         idx = st.session_state.test_idx
 
         if idx >= len(bloque1):
@@ -229,7 +242,13 @@ def pagina_test_universo():
     elif fase == "bloque2":
         grupo = st.session_state.test_grupo
         ids_grupo = PREGUNTAS_POR_GRUPO.get(grupo, [])
-        preguntas_b2 = preguntas[preguntas["pregunta_id"].isin(ids_grupo)].reset_index(drop=True)
+        preguntas_b2_base = preguntas[preguntas["pregunta_id"].isin(ids_grupo)].reset_index(drop=True)
+        if "_orden_b2" not in st.session_state or st.session_state["_orden_b2"] is None:
+            import time; random.seed(int(time.time()*1000)%99999)
+            orden_b2 = list(range(len(preguntas_b2_base)))
+            random.shuffle(orden_b2)
+            st.session_state["_orden_b2"] = orden_b2
+        preguntas_b2 = preguntas_b2_base.iloc[st.session_state["_orden_b2"]].reset_index(drop=True)
         total_b2 = len(preguntas_b2)
         idx = st.session_state.test_idx
 

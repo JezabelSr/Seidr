@@ -6,6 +6,7 @@ SEIÐR — Módulo 1: Tu perfil
 import streamlit as st
 import pandas as pd
 import numpy as np
+import random
 
 DIMENSIONES = [
     "hiperfoco", "regulacion_emocional", "sensorialidad", "comunicacion",
@@ -209,10 +210,20 @@ def pagina_modulo_1():
         st.warning("Primero completa el test de universo.")
         return
 
-    preguntas = cargar_preguntas_modulo1(universo_id)
-    if preguntas.empty:
+    preguntas_base = cargar_preguntas_modulo1(universo_id)
+    if preguntas_base.empty:
         st.error(f"No hay preguntas para el universo {universo_id}.")
         return
+
+    # Aleatorizar orden de preguntas — estable por sesión
+    key_orden_m1 = f"_m1_orden_preguntas_{universo_id}"
+    if key_orden_m1 not in st.session_state or st.session_state[key_orden_m1] is None:
+        import time
+        random.seed(int(time.time() * 1000) % 99999)
+        orden_m1 = list(range(len(preguntas_base)))
+        random.shuffle(orden_m1)
+        st.session_state[key_orden_m1] = orden_m1
+    preguntas = preguntas_base.iloc[st.session_state[key_orden_m1]].reset_index(drop=True)
 
     fase = st.session_state.m1_fase
 
@@ -260,7 +271,17 @@ def pagina_modulo_1():
             unsafe_allow_html=True
         )
 
-        for i, op in enumerate(opciones):
+        # Aleatorizar opciones — orden nuevo en cada sesión
+        key_orden_op = f"_m1_op_{idx}"
+        if key_orden_op not in st.session_state or st.session_state[key_orden_op] is None:
+            import time
+            random.seed(int(time.time() * 1000 + idx * 13) % 99999)
+            orden_op = list(range(len(opciones)))
+            random.shuffle(orden_op)
+            st.session_state[key_orden_op] = orden_op
+        opciones_shuffle = [opciones[i] for i in st.session_state[key_orden_op]]
+
+        for i, op in enumerate(opciones_shuffle):
             if st.button(op["texto"], key=f"m1_q{idx}_op{i}", use_container_width=True):
                 dim_key = dimension.strip().lower()
                 if dim_key in st.session_state.m1_respuestas:
