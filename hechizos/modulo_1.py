@@ -405,11 +405,13 @@ def _mostrar_orientacion_nd(perfil: dict):
         df_resultado = orientar_nd(perfil_nd, df_nd, umbral=8)
 
         # ── Guardar orientacion_nd en session_state para módulos 3-7 y código Seiðr ──
+        nombres = df_resultado["nombre"].tolist()
         nds_encontradas = [
-            r for r in df_resultado["nombre"].tolist()
-            if r != "Perfil Neurotípico"
+            r for r in nombres
+            if r not in ("Perfil Neurotípico", "Perfil Atípico")
         ]
         st.session_state["orientacion_nd"] = nds_encontradas
+        st.session_state["perfil_atipico"] = "Perfil Atípico" in nombres
 
         st.markdown(
             "<h2 style=\"font-family:'Cinzel',serif;color:#c9a84c;"
