@@ -19,7 +19,6 @@ def cargar_contenido(ruta: str = "universos/contenido_modulos.csv") -> pd.DataFr
             return df
     except Exception:
         pass
-    # Fallback a CSV
     try:
         df = pd.read_csv(ruta, encoding="utf-8-sig")
         df.columns = [c.strip().lstrip("\ufeff") for c in df.columns]
@@ -37,7 +36,6 @@ def cargar_recursos(ruta: str = "universos/recursos_reales/recursos.csv") -> pd.
             return df
     except Exception:
         pass
-    # Fallback a CSV
     try:
         return pd.read_csv(ruta)
     except Exception:
@@ -51,9 +49,15 @@ def obtener_contenido_nd(df: pd.DataFrame, nd: str, modulo: int) -> dict | None:
         return None
     row = fila.iloc[0]
     return {
-        "explicacion": str(row.get("explicacion_perfil", "")),
-        "tecnicas":    [t.strip() for t in str(row.get("tecnicas", "")).split("|") if t.strip()],
-        "adaptaciones":[a.strip() for a in str(row.get("adaptaciones", "")).split("|") if a.strip()],
+        "explicacion":            str(row.get("explicacion_perfil", "")),
+        "como_aprende":           str(row.get("como_aprende", "")),
+        "dificultades":           str(row.get("dificultades", "")),
+        "fortalezas":             str(row.get("fortalezas", "")),
+        "estrategias":            str(row.get("estrategias", "")),
+        "herramientas_ia":        str(row.get("herramientas_ia", "")),
+        "herramientas_especificas": str(row.get("herramientas_especificas", "")),
+        "adaptaciones":           str(row.get("adaptaciones", "")),
+        "kit_supervivencia":      str(row.get("kit_supervivencia", "")),
     }
 
 
@@ -82,6 +86,7 @@ def _normalizar_nds(orientacion_nd) -> list[str]:
 # ── Bloques de UI ─────────────────────────────────────────────────────────────
 
 def _bloque_explicacion(texto: str):
+    texto_html = texto.replace("\n", "<br>")
     st.markdown(f"""
     <div style="
         background: rgba(20,20,30,0.92);
@@ -90,16 +95,15 @@ def _bloque_explicacion(texto: str):
         padding: 1.2rem 1.5rem;
         margin-bottom: 1.2rem;
     ">
-        <p style="color:#e8e0d0; font-size:0.95rem; line-height:1.7; margin:0;">{texto}</p>
+        <p style="color:#e8e0d0; font-size:0.95rem; line-height:1.7; margin:0;">{texto_html}</p>
     </div>
     """, unsafe_allow_html=True)
 
 
-def _bloque_lista(titulo: str, icono: str, items: list[str], color_borde: str = "#c9a84c"):
-    items_html = "".join(
-        f"<li style='color:#e8e0d0; font-size:0.9rem; line-height:1.6; margin-bottom:0.5rem;'>{it}</li>"
-        for it in items
-    )
+def _bloque_texto(titulo: str, icono: str, texto: str, color_borde: str = "#c9a84c"):
+    if not texto or texto.strip() in ("", "nan"):
+        return
+    texto_html = texto.replace("\n", "<br>")
     st.markdown(f"""
     <div style="
         background: rgba(20,20,30,0.88);
@@ -112,7 +116,7 @@ def _bloque_lista(titulo: str, icono: str, items: list[str], color_borde: str = 
                   font-size:0.95rem; margin:0 0 0.8rem; letter-spacing:0.05em;">
             {icono} {titulo}
         </p>
-        <ul style="margin:0; padding-left:1.2rem;">{items_html}</ul>
+        <p style="color:#e8e0d0; font-size:0.9rem; line-height:1.7; margin:0;">{texto_html}</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -127,11 +131,11 @@ def _bloque_recursos(df_recursos: pd.DataFrame):
     </p>
     """, unsafe_allow_html=True)
     for _, row in df_recursos.iterrows():
-        nombre = row.get("nombre", "")
-        desc   = row.get("descripcion", "")
-        url    = row.get("url", "")
+        nombre   = row.get("nombre", "")
+        desc     = row.get("descripcion", "")
+        url      = row.get("url", "")
         gratuito = str(row.get("gratuito", "")).strip().lower() in ("true", "1", "sí", "si")
-        tag    = "🟢" if gratuito else "🔴"
+        tag      = "🟢" if gratuito else "🔴"
         st.markdown(f"""
         <div style="
             background: rgba(15,15,22,0.7);
@@ -195,6 +199,7 @@ def mostrar_modulo_3(orientacion_nd=None):
     nds = _normalizar_nds(orientacion_nd)
 
     _cabecera_modulo("ᚲ", "Tu forma de comunicarte", "Módulo 3 · Comunicación")
+
     # ── Narrador contextual ──
     try:
         from narrador import get_narrador
@@ -211,12 +216,25 @@ def mostrar_modulo_3(orientacion_nd=None):
     except Exception:
         pass
 
-
     df_contenido = cargar_contenido()
     df_recursos  = cargar_recursos()
 
     if not nds:
-        _aviso_nt()
+        contenido_nt = obtener_contenido_nd(df_contenido, "NT", modulo=3)
+        if contenido_nt:
+            label_nt = "<p style='font-family:Cinzel,serif; color:#9a9080; font-size:0.8rem; letter-spacing:0.05em; margin-bottom:0.5rem;'>ASÍ FUNCIONA TU COMUNICACIÓN</p>"
+            st.markdown(label_nt, unsafe_allow_html=True)
+            _bloque_explicacion(contenido_nt["explicacion"])
+            _bloque_texto("Cómo funciona mejor", "✦", contenido_nt["como_aprende"])
+            _bloque_texto("Dificultades frecuentes", "◈", contenido_nt["dificultades"], color_borde="#9a9080")
+            _bloque_texto("Tus fortalezas", "✧", contenido_nt["fortalezas"], color_borde="#4a7fa5")
+            _bloque_texto("Qué puedes hacer", "⚔", contenido_nt["estrategias"])
+            _bloque_texto("Herramientas de IA para ti", "⭐", contenido_nt["herramientas_ia"])
+            _bloque_texto("Herramientas y recursos específicos", "🔧", contenido_nt["herramientas_especificas"])
+            _bloque_texto("Qué puedes pedir a tu entorno", "◈", contenido_nt["adaptaciones"], color_borde="#4a7fa5")
+            _bloque_texto("Kit de supervivencia", "🧭", contenido_nt["kit_supervivencia"], color_borde="#c9a84c")
+        else:
+            _aviso_nt()
         _bloque_recursos(filtrar_recursos_nd(df_recursos, 3, []))
         _nota_pie()
         return
@@ -231,6 +249,7 @@ def mostrar_modulo_3(orientacion_nd=None):
 
         contenido = obtener_contenido_nd(df_contenido, nd, modulo=3)
         if contenido:
+            # Perfil
             st.markdown(
                 "<p style='font-family:\"Cinzel\",serif; color:#9a9080;"
                 "font-size:0.8rem; letter-spacing:0.05em; margin-bottom:0.5rem;'>"
@@ -239,11 +258,30 @@ def mostrar_modulo_3(orientacion_nd=None):
             )
             _bloque_explicacion(contenido["explicacion"])
 
-            if contenido["tecnicas"]:
-                _bloque_lista("Qué puedes hacer", "✦", contenido["tecnicas"])
+            # Cómo funciona mejor
+            _bloque_texto("Cómo funciona mejor", "✦", contenido["como_aprende"])
 
-            if contenido["adaptaciones"]:
-                _bloque_lista("Qué puedes pedir a tu entorno", "◈", contenido["adaptaciones"], color_borde="#4a7fa5")
+            # Dificultades frecuentes
+            _bloque_texto("Dificultades frecuentes", "◈", contenido["dificultades"], color_borde="#9a9080")
+
+            # Fortalezas
+            _bloque_texto("Tus fortalezas", "✧", contenido["fortalezas"], color_borde="#4a7fa5")
+
+            # Estrategias
+            _bloque_texto("Qué puedes hacer", "⚔", contenido["estrategias"])
+
+            # Herramientas IA
+            _bloque_texto("Herramientas de IA para ti", "⭐", contenido["herramientas_ia"])
+
+            # Herramientas específicas
+            _bloque_texto("Herramientas y recursos específicos", "🔧", contenido["herramientas_especificas"])
+
+            # Adaptaciones
+            _bloque_texto("Qué puedes pedir a tu entorno", "◈", contenido["adaptaciones"], color_borde="#4a7fa5")
+
+            # Kit supervivencia
+            _bloque_texto("Kit de supervivencia", "🧭", contenido["kit_supervivencia"], color_borde="#c9a84c")
+
         else:
             st.info(f"Contenido para {nd} no disponible aún.")
 
@@ -252,7 +290,6 @@ def mostrar_modulo_3(orientacion_nd=None):
     if not df_rec_filtrado.empty:
         st.markdown("<hr style='border-color:#2a2a3a; margin:1.5rem 0;'>", unsafe_allow_html=True)
         _bloque_recursos(df_rec_filtrado)
-
 
     # ── Descarga PDF del módulo ──
     try:
@@ -277,4 +314,4 @@ def mostrar_modulo_3(orientacion_nd=None):
     except Exception:
         pass
 
-        _nota_pie()
+    _nota_pie()

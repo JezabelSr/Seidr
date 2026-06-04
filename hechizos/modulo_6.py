@@ -4,7 +4,7 @@ import streamlit as st
 from modulo_3 import (
     cargar_contenido, cargar_recursos, obtener_contenido_nd,
     filtrar_recursos_nd, _normalizar_nds,
-    _cabecera_modulo, _bloque_explicacion, _bloque_lista,
+    _cabecera_modulo, _bloque_explicacion, _bloque_texto,
     _bloque_recursos, _aviso_nt, _nota_pie
 )
 
@@ -13,6 +13,7 @@ def mostrar_modulo_6(orientacion_nd=None):
     nds = _normalizar_nds(orientacion_nd)
 
     _cabecera_modulo("ᛊ", "Tu cuerpo", "Módulo 6 · Propiocepción y Sensorialidad")
+
     # ── Narrador contextual ──
     try:
         from narrador import get_narrador
@@ -29,12 +30,25 @@ def mostrar_modulo_6(orientacion_nd=None):
     except Exception:
         pass
 
-
     df_contenido = cargar_contenido()
     df_recursos  = cargar_recursos()
 
     if not nds:
-        _aviso_nt()
+        contenido_nt = obtener_contenido_nd(df_contenido, "NT", modulo=6)
+        if contenido_nt:
+            label_nt = "<p style='font-family:Cinzel,serif; color:#9a9080; font-size:0.8rem; letter-spacing:0.05em; margin-bottom:0.5rem;'>ASÍ FUNCIONA TU CUERPO</p>"
+            st.markdown(label_nt, unsafe_allow_html=True)
+            _bloque_explicacion(contenido_nt["explicacion"])
+            _bloque_texto("Cómo funciona mejor", "✦", contenido_nt["como_aprende"])
+            _bloque_texto("Dificultades frecuentes", "◈", contenido_nt["dificultades"], color_borde="#9a9080")
+            _bloque_texto("Tus fortalezas", "✧", contenido_nt["fortalezas"], color_borde="#4a7fa5")
+            _bloque_texto("Qué puedes hacer", "⚔", contenido_nt["estrategias"])
+            _bloque_texto("Herramientas de IA para ti", "⭐", contenido_nt["herramientas_ia"])
+            _bloque_texto("Herramientas y recursos específicos", "🔧", contenido_nt["herramientas_especificas"])
+            _bloque_texto("Qué puedes pedir a tu entorno", "◈", contenido_nt["adaptaciones"], color_borde="#4a7fa5")
+            _bloque_texto("Kit de supervivencia", "🧭", contenido_nt["kit_supervivencia"], color_borde="#c9a84c")
+        else:
+            _aviso_nt()
         _bloque_recursos(filtrar_recursos_nd(df_recursos, 6, []))
         _nota_pie()
         return
@@ -56,12 +70,14 @@ def mostrar_modulo_6(orientacion_nd=None):
                 unsafe_allow_html=True
             )
             _bloque_explicacion(contenido["explicacion"])
-
-            if contenido["tecnicas"]:
-                _bloque_lista("Qué puedes hacer", "✦", contenido["tecnicas"])
-
-            if contenido["adaptaciones"]:
-                _bloque_lista("Qué puedes pedir o cambiar en tu entorno", "◈", contenido["adaptaciones"], color_borde="#4a7fa5")
+            _bloque_texto("Cómo funciona mejor", "✦", contenido["como_aprende"])
+            _bloque_texto("Dificultades frecuentes", "◈", contenido["dificultades"], color_borde="#9a9080")
+            _bloque_texto("Tus fortalezas", "✧", contenido["fortalezas"], color_borde="#4a7fa5")
+            _bloque_texto("Qué puedes hacer", "⚔", contenido["estrategias"])
+            _bloque_texto("Herramientas de IA para ti", "⭐", contenido["herramientas_ia"])
+            _bloque_texto("Herramientas y recursos específicos", "🔧", contenido["herramientas_especificas"])
+            _bloque_texto("Qué puedes pedir a tu entorno", "◈", contenido["adaptaciones"], color_borde="#4a7fa5")
+            _bloque_texto("Kit de supervivencia", "🧭", contenido["kit_supervivencia"], color_borde="#c9a84c")
         else:
             st.info(f"Contenido para {nd} no disponible aún.")
 
@@ -69,7 +85,6 @@ def mostrar_modulo_6(orientacion_nd=None):
     if not df_rec_filtrado.empty:
         st.markdown("<hr style='border-color:#2a2a3a; margin:1.5rem 0;'>", unsafe_allow_html=True)
         _bloque_recursos(df_rec_filtrado)
-
 
     # ── Descarga PDF del módulo ──
     try:
@@ -94,4 +109,4 @@ def mostrar_modulo_6(orientacion_nd=None):
     except Exception:
         pass
 
-        _nota_pie()
+    _nota_pie()

@@ -225,6 +225,10 @@ def pagina_modulo_1():
         st.session_state[key_orden_m1] = orden_m1
     preguntas = preguntas_base.iloc[st.session_state[key_orden_m1]].reset_index(drop=True)
 
+    # ── Bug fix: si el test ya está completado, ir directo a resultado ──
+    if st.session_state.get("test_dim_done") and st.session_state.get("m1_fase") == "test":
+        st.session_state["m1_fase"] = "resultado"
+
     fase = st.session_state.m1_fase
 
     # Cabecera
@@ -399,6 +403,13 @@ def _mostrar_orientacion_nd(perfil: dict):
         }
 
         df_resultado = orientar_nd(perfil_nd, df_nd, umbral=8)
+
+        # ── Guardar orientacion_nd en session_state para módulos 3-7 y código Seiðr ──
+        nds_encontradas = [
+            r for r in df_resultado["nombre"].tolist()
+            if r != "Perfil Neurotípico"
+        ]
+        st.session_state["orientacion_nd"] = nds_encontradas
 
         st.markdown(
             "<h2 style=\"font-family:'Cinzel',serif;color:#c9a84c;"

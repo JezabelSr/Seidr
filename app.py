@@ -393,6 +393,94 @@ with st.sidebar:
             st.session_state.pop(k, None)
         st.rerun()
 
+
+    # ── Modo Admin ──────────────────────────────
+    with st.expander("ᚹ El Oráculo", expanded=False):
+        st.markdown(
+            """<div style='background:linear-gradient(135deg,#1a1a1e 0%,#12121a 60%,#1e1a14 100%);
+                border:1px solid #3a3428;border-radius:8px;padding:1.2rem 1rem;
+                box-shadow:inset 0 0 20px rgba(0,0,0,0.6);text-align:center;margin-bottom:0.8rem;'>
+                <div style='font-size:2rem;color:#3a3428;margin-bottom:0.8rem;filter:blur(0.5px);'>ᚹ</div>
+                <p style='font-family:Cinzel,serif;color:#5a5040;font-size:0.8rem;
+                          letter-spacing:0.1em;margin:0 0 0.5rem;'>CAMINO SELLADO</p>
+                <p style='color:#4a4030;font-size:0.78rem;font-style:italic;
+                          margin:0 0 0.8rem;line-height:1.6;'>
+                    Este camino solo está abierto a las Nornas<br>que tejen los hilos de Seiðr.
+                </p>
+                <div style='border-top:1px solid #3a3428;margin:0 auto 0.8rem;width:60%;'></div>
+                <p style='color:#6a5a40;font-size:0.75rem;margin:0;letter-spacing:0.03em;'>
+                    Si las tienes, introduce aquí tus runas para pasar:
+                </p>
+            </div>""",
+            unsafe_allow_html=True
+        )
+        pwd = st.text_input("Runas", type="password", key="admin_pwd", label_visibility="collapsed")
+        if pwd == "Panda!051213":
+            import pandas as pd
+
+            st.markdown("<small style='color:#c9a84c'>El oráculo ha abierto sus puertas</small>", unsafe_allow_html=True)
+
+            UNIVERSOS_ADMIN = {
+                1: "Harry Potter", 2: "La Brújula Dorada", 3: "Pokémon",
+                4: "Studio Ghibli", 5: "Cómo entrenar a tu dragón", 6: "Disney/Pixar"
+            }
+            NDS_ADMIN = [
+                "NT", "Dislexia", "TDAH", "TEA", "AACC", "Discalculia",
+                "Dispraxia/TDC", "Síndrome de Tourette", "SPD", "Tartamudez",
+                "Discapacidad Intelectual", "TOC", "Mutismo Selectivo",
+                "Trastorno de Ansiedad Social", "TANV"
+            ]
+
+            # Selector de universo
+            u_nombre = st.selectbox("Universo", list(UNIVERSOS_ADMIN.values()), key="admin_universo")
+            u_id = [k for k, v in UNIVERSOS_ADMIN.items() if v == u_nombre][0]
+
+            # Selector de personaje filtrado por universo
+            try:
+                df_p = pd.read_csv("universos/personajes.csv", engine="python")
+                personajes_u = df_p[df_p["universo_id"] == u_id]["nombre"].tolist()
+            except Exception:
+                personajes_u = []
+
+            personaje_sel = st.selectbox("Personaje", ["— ninguno —"] + personajes_u, key="admin_personaje")
+
+            # Selector de ND
+            nd_sel = st.selectbox("ND", NDS_ADMIN, key="admin_nd")
+
+            # Selector de criatura
+            try:
+                df_c = pd.read_csv("universos/criaturas.csv", engine="python")
+                criaturas_u = df_c[df_c["universo_id"] == u_id]["nombre"].tolist()
+            except Exception:
+                criaturas_u = []
+            criatura_sel = st.selectbox("Criatura", ["— ninguna —"] + criaturas_u, key="admin_criatura")
+
+            if st.button("⚡ Cargar perfil", key="admin_cargar", use_container_width=True):
+                st.session_state["universo_elegido"]   = u_id
+                st.session_state["universo_nombre"]    = u_nombre
+                st.session_state["test_universo_done"] = True
+                st.session_state["test_dim_done"]      = True
+                st.session_state["orientacion_nd"]     = [] if nd_sel == "NT" else [nd_sel]
+
+                if personaje_sel != "— ninguno —":
+                    st.session_state["personaje_asignado"] = personaje_sel
+                    try:
+                        fila = df_p[df_p["nombre"] == personaje_sel].iloc[0]
+                        st.session_state["personaje_data"] = fila.to_dict()
+                        # Perfil desde el personaje
+                        DIMS = ["hiperfoco","regulacion_emocional","sensorialidad","comunicacion",
+                                "aprendizaje","sociabilidad","propiocepcion","funcion_ejecutiva"]
+                        st.session_state["perfil_usuario"] = {d: float(fila.get(d, 0)) for d in DIMS}
+                    except Exception:
+                        pass
+
+                if criatura_sel != "— ninguna —":
+                    st.session_state["criatura_asignada"] = criatura_sel
+
+                # Limpiar estado del test para evitar bloqueos
+                st.session_state["m1_fase"] = "resultado"
+                st.rerun()
+
     st.markdown("---")
     st.markdown(
         "<small style='color:#555'>Seiðr v1.0 · AGPL v3<br>"
@@ -567,7 +655,12 @@ reproducir_musica_universo()
 if pagina_id == "inicio":
     pagina_inicio()
 elif pagina_id == "test_universo":
-    pagina_test_universo()
+    if st.session_state.get("test_universo_done") and st.session_state.get("universo_elegido"):
+        pagina_sellada("Test de universo", "ᚦ",
+                       mensaje="Ya has elegido tu universo. Usa el botón Reiniciar para empezar de nuevo.",
+                       destino_key="ᚨ  Tu perfil", destino_label="ᚨ Ir a tu perfil")
+    else:
+        pagina_test_universo()
 elif pagina_id == "modulo_1":
     if not st.session_state.get("universo_elegido"):
         pagina_sellada("Tu perfil", "ᚨ", mensaje="Elige primero tu universo para descubrir tu perfil.",

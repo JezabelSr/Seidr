@@ -49,3 +49,30 @@ recurso_id,nombre,tipo,descripcion,edad,gratuito,url,fuente,modulo,neurodivergen
 48,CADAH — Fundación TDAH,asociacion,"Fundación especializada en TDAH. Tests de cribado, información clínica y directorio de profesionales.",ambos,True,https://www.fundacioncadah.org,CADAH,7,TDAH
 49,Confederación Salud Mental España,asociacion,Red de asociaciones de salud mental en España. Orientación y directorio de recursos por CCAA.,ambos,True,https://consaludmental.org,Salud Mental España,7,"TEA,TDAH,TOC,Trastorno de Ansiedad Social,Mutismo Selectivo"
 50,Burnout autista (test),test,Evalúa el agotamiento específico del burnout autista.,adulto,True,https://embrace-autism.com/autistic-burnout,Embrace Autism,7,TEA
+51,Finch,app,App de autocuidado gamificada. Crea hábitos y metas pequeñas sin presión excesiva.,ambos,True,https://finchcare.com,Finch,6,"TEA,Trastorno de Ansiedad Social,TDAH"
+52,Calm,app,"App de meditación, respiración y relajación. Útil para regulación emocional y sensorial.",ambos,False,https://www.calm.com,Calm,6,"TEA,Trastorno de Ansiedad Social,TOC,Tartamudez,Síndrome de Tourette,SPD"
+53,Insight Timer,app,App de meditación gratuita con miles de sesiones. Útil para regulación y manejo de ansiedad.,ambos,True,https://insighttimer.com,Insight Timer,6,"TEA,Trastorno de Ansiedad Social,TOC,Tartamudez,Síndrome de Tourette,SPD"
+54,Headspace,app,App de mindfulness y meditación guiada.,ambos,False,https://www.headspace.com,Headspace,6,"Trastorno de Ansiedad Social,TOC"
+55,Time Timer,app,Temporizador visual que muestra el tiempo de forma gráfica. Muy útil para gestión del tiempo.,ambos,False,https://www.timetimer.com,Time Timer,4,"TDAH,TEA,Discapacidad Intelectual,Dispraxia/TDC"
+56,Forest,app,App de concentración mediante gamificación. Planta un árbol virtual mientras estudias.,ambos,False,https://www.forestapp.cc,Forest,4,TDAH
+57,Todoist,herramienta,"Gestor de tareas con recordatorios, prioridades y proyectos. Muy útil para funciones ejecutivas.",ambos,True,https://todoist.com,Todoist,4,"TDAH,TEA,TOC,Dispraxia/TDC,Discapacidad Intelectual,TANV,Dislexia"
+58,Notion,herramienta,"Espacio de trabajo todo-en-uno para organización, notas y proyectos.",ambos,True,https://notion.so,Notion,4,"TDAH,TEA,AACC,Discalculia,TANV"
+59,NotebookLM,herramienta,"Herramienta de Google para estudiar con IA. Convierte apuntes en resúmenes, podcasts y responde preguntas sobre tus materiales.",ambos,True,https://notebooklm.google.com,Google,4,"TEA,TDAH,Dislexia,Tartamudez,TOC,Trastorno de Ansiedad Social,Síndrome de Tourette,SPD,Discapacidad Intelectual,Dispraxia/TDC,TANV,Discalculia,AACC"
+60,White Noise,app,Generador de ruido blanco para reducir distracciones sensoriales.,ambos,True,https://whitenoiseapp.com,White Noise,6,"SPD,TEA,TDAH"
+61,Microsoft Immersive Reader,herramienta,"Lector inmersivo gratuito de Microsoft. Adapta textos con opciones de fuente, espaciado y síntesis de voz.",ambos,True,https://www.onenote.com/learningtools,Microsoft,4,"Dislexia,TEA,TDAH"
+62,NaturalReader,herramienta,"Lector de texto a voz. Convierte cualquier documento, PDF o web en audio.",ambos,True,https://www.naturalreaders.com,NaturalReader,4,"Dislexia,TEA,Tartamudez"
+63,Speechify,herramienta,"App de texto a voz de alta calidad. Lee libros, PDFs y webs en voz alta.",ambos,False,https://speechify.com,Speechify,4,"Dislexia,TEA,Tartamudez"
+64,GeoGebra,herramienta,Herramienta matemática visual e interactiva. Útil para visualizar conceptos abstractos.,ambos,True,https://www.geogebra.org,GeoGebra,4,"Discalculia,TANV"
+65,Khan Academy,herramienta,Plataforma educativa gratuita con ejercicios y vídeos paso a paso en múltiples materias.,ambos,True,https://es.khanacademy.org,Khan Academy,4,"Discalculia,Dislexia,Discapacidad Intelectual,AACC"
+66,Obsidian,herramienta,App de notas con conexiones entre ideas. Especialmente útil para pensamiento complejo.,adulto,True,https://obsidian.md,Obsidian,4,"AACC,TDAH"
+67,XMind,herramienta,Herramienta de mapas mentales para organizar y conectar ideas visualmente.,ambos,True,https://xmind.net,XMind,4,"AACC,TDAH,TEA,TANV"
+68,Autistic Self Advocacy Network (ASAN),asociacion,Red internacional de autodefensa autista liderada por personas autistas.,ambos,True,https://autisticadvocacy.org,ASAN,5,TEA
+69,Anxiety & Depression Association of America (ADAA),asociacion,"Recursos internacionales sobre ansiedad, incluyendo trastorno de ansiedad social.",ambos,True,https://adaa.org,ADAA,7,"Trastorno de Ansiedad Social,TOC"
+70,Stuttering Foundation,asociacion,"Fundación internacional de referencia para tartamudez. Recursos, investigación y apoyo.",ambos,True,https://www.stutteringhelp.org,Stuttering Foundation,7,Tartamudez
+71,International OCD Foundation (IOCDF),asociacion,Fundación internacional de referencia para TOC. Recursos y directorio de profesionales.,ambos,True,https://iocdf.org,IOCDF,7,TOC
+72,Tourette Association of America,asociacion,Asociación internacional de referencia para Síndrome de Tourette.,ambos,True,https://tourette.org,TAA,7,Síndrome de Tourette
+73,NVLD Project,asociacion,Organización de referencia internacional para TANV/NVLD.,ambos,True,https://nvld.org,NVLD Project,7,TANV
+74,CHADD,asociacion,"Organización internacional de referencia para TDAH. Recursos, investigación y apoyo.",ambos,True,https://chadd.org,CHADD,7,TDAH
+75,Dyslexia International,asociacion,Recursos internacionales sobre dislexia.,ambos,True,https://www.dyslexia-international.org,Dyslexia International,7,Dislexia
+76,Orientación Andújar,herramienta,Portal educativo español con materiales adaptados para múltiples NEE y neurodivergencias.,ambos,True,https://www.orientacionandujar.es,Orientación Andújar,4,"TEA,TDAH,Dislexia,Discalculia,Dispraxia/TDC,Discapacidad Intelectual,TANV,Tartamudez,Mutismo Selectivo,Trastorno de Ansiedad Social,TOC,Síndrome de Tourette,SPD,AACC"
+77,TickTick,herramienta,"Gestor de tareas con hábitos, temporizador Pomodoro y recordatorios. Alternativa a Todoist.",ambos,True,https://ticktick.com,TickTick,4,TDAH
