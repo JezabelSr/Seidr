@@ -99,23 +99,101 @@ El perfil del usuario (puntuaciones 0-5 en 8 dimensiones) se compara con los ran
 
 ## Instalación local
 
+### Requisitos previos
+
+- Python 3.10 o superior (probado en 3.14)
+- Git
+- Google Chrome instalado (necesario para Selenium si quieres ejecutar los notebooks de scraping)
+
+> Las imágenes, fondos, música y todos los assets están incluidos en el repositorio. No hay que descargar nada adicional.
+
+---
+
+### Paso a paso
+
+#### 1. Clonar el repositorio
+
 ```bash
-# Clonar el repositorio
 git clone https://github.com/JezabelSr/Seidr.git
 cd Seidr
+```
 
-# Crear entorno virtual e instalar dependencias
+#### 2. Crear y activar el entorno virtual
+
+```bash
 python -m venv venv
-source venv/Scripts/activate  # Windows
-# source venv/bin/activate    # Mac/Linux
+```
 
+Activar según tu sistema operativo:
+
+```bash
+source venv/Scripts/activate    # Windows (Git Bash) ← recomendado
+venv\Scripts\activate.bat     # Windows (CMD)
+source venv/bin/activate         # Mac / Linux
+```
+
+Sabrás que está activado porque verás `(venv)` al inicio de la línea en la terminal.
+
+#### 3. Instalar dependencias
+
+```bash
 pip install -r requirements.txt
+```
 
-# Ejecutar
+Esto instala Streamlit, pandas, SQLite, Plotly, fpdf2, scipy, numpy y el resto de librerías necesarias.
+
+#### 4. Generar la base de datos SQLite
+
+```bash
+python hechizos/crear_bd.py --forzar
+```
+
+> ⚠️ Este paso es **obligatorio** antes del primer arranque y cada vez que modifiques un CSV.
+> La base de datos (`seidr.db`) no está incluida en el repositorio — se genera a partir de los CSVs de `universos/`.
+> Si la app arranca pero no muestra datos, ejecuta este comando de nuevo.
+
+#### 5. Arrancar la aplicación
+
+```bash
 streamlit run app.py
 ```
 
-La base de datos SQLite se genera automáticamente desde los CSVs al arrancar por primera vez.
+La aplicación estará disponible en `http://localhost:8501`.
+
+---
+
+### Estructura de dependencias
+
+```
+CSVs en universos/
+    ↓ python hechizos/crear_bd.py --forzar
+seidr.db (generada automáticamente)
+    ↓
+app.py (lee desde seidr.db con fallback a CSV)
+    ↓
+streamlit run app.py
+```
+
+El flujo es siempre: **CSVs → BD → app**. Si cambias datos en un CSV, regenera la BD antes de arrancar.
+
+---
+
+### Solución de problemas frecuentes
+
+**La app arranca pero no muestra datos o sale error de tabla**
+→ Ejecuta `python hechizos/crear_bd.py --forzar` para regenerar la base de datos.
+
+**Error `ModuleNotFoundError` al arrancar**
+→ El entorno virtual no está activado. Ejecuta `source venv/Scripts/activate` y vuelve a intentarlo.
+
+**Error al importar `hechizos.*`**
+→ Asegúrate de ejecutar `streamlit run app.py` desde la raíz del proyecto (`Seidr/`), no desde dentro de `hechizos/`.
+
+**La app muestra datos desactualizados tras modificar un CSV**
+→ Ejecuta `python hechizos/crear_bd.py --forzar` para sincronizar la BD con los CSVs.
+
+**Los fondos o la música no cargan**
+→ Comprueba que las carpetas `iconografia/fondos/` e `iconografia/musica/` existen y contienen los archivos `.webp` y `.mp3`.
 
 ---
 
